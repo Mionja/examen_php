@@ -1,9 +1,10 @@
 <?php
-include("/mine/PHP/Controllers/Ctrl_acceuils.php");
-include("/mine/PHP/Controllers/Ctrl_profs.php");
-include("/mine/PHP/Controllers/Ctrl_etudiants.php");
-include("/mine/PHP/Controllers/Ctrl_contacts.php");
-include("/mine/PHP/Controllers/Ctrl_modules.php");
+include("Controllers/Ctrl_acceuils.php");
+include("Controllers/Ctrl_profs.php");
+include("Controllers/Ctrl_etudiants.php");
+include("Controllers/Ctrl_contacts.php");
+include("Controllers/Ctrl_modules.php");
+
 
 class Ctrl_pages
 {
@@ -21,7 +22,7 @@ class Ctrl_pages
             case 'Ctrl_contacts':
                 self::thePage($page);
                 break;
-            case 'Ctrl_contacts':
+            case 'Ctrl_modules':
                 self::thePage($page);
                 break;
             default:

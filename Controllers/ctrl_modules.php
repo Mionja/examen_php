@@ -3,7 +3,6 @@
 include 'Models/mdl_module.php';
 class Ctrl_modules
 {
-
     public static function index()
     {
         $view = isset($_GET['view']) ? $_GET['view'] : NULL;
@@ -26,21 +25,21 @@ class Ctrl_modules
                 if (isset($_POST['add'])) {
                     extract($_POST);
                     $test = Mdl_module::save_data($nom, $code, $heure);
-                    header("location:/mine/Examen-PHP/index.php");
+                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
             case 'delete':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     Mdl_module::delete_data($id);
-                    header("location:/mine/Examen-PHP/index.php");
+                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
                     Mdl_module::set_data($nom, $code, $heure, $id);
-                    header("location:/mine/Examen-PHP/index.php");
+                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
         }
@@ -56,16 +55,6 @@ class Ctrl_modules
         }
         include('Views/modules/' . $page . '_modules.php');
     }
-    public static function save()
-    {
-    }
-    public static function update()
-    {
-        # code...
-    }
-    public static function delete()
-    {
-        # code...
-    }
+ 
 }
-    // Ctrl_modules::index();    
+   

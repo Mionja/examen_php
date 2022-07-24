@@ -3,7 +3,7 @@
     {
         public static function index()
         {
-            require("/mine/PHP/Views/acceuil.php");
+            include("Views/acceuil.php");
         }
     }
 ?>

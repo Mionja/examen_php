@@ -2,7 +2,7 @@
 <hr>
 
 <div class="container w-75">
-    <form action="/mine/Examen-PHP/index.php?action=edit" method="post" class="form">
+    <form action="/mine/PHP/index.php?page=Ctrl_modules&action=edit" method="post" class="form">
     <input type="hidden" name="id" value="<?= $module['id'] ?>"><br>
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?= $module['nom']?>" required class="form-control"><br>
     <label for="prof">Prof :</label><input type="text" name="prof" id="prof" class="form-control" required><br>
@@ -19,7 +19,7 @@
         <button type="submit" name="update" class="btn btn-success">Valider</button>
         </div>
         <div class="col">
-        <a href="/mine/Examen-PHP/" class="btn btn-dark">Liste des modules</a>
+        <a href="/mine/PHP/index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>
         </div>
     </div>
 </form>
