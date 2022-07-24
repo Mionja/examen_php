@@ -25,12 +25,12 @@ class Ctrl_pages
                 self::thePage($page);
                 break;
             default:
-                self::thePage('Ctrl_acceuils');
+                Ctrl_acceuils::index();
                 break;
         }
     }
     public static function thePage($page)
     {
-         $page::index() ;
+        $page::index() ;
     }
 }
