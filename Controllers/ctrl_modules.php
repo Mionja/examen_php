@@ -1,5 +1,4 @@
 <?php
-
 include 'Models/mdl_module.php';
 class Ctrl_modules
 {
