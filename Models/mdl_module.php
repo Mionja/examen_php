@@ -1,6 +1,6 @@
 <?php
 
-include 'Utils/db.php';
+//include 'Utils/db.php';
 class Mdl_module
 {
     public static function list_data()

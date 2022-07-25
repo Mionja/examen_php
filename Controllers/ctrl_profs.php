@@ -1,6 +1,6 @@
 <?php
 
-//include 'Models/mdl_prof.php';
+include 'Models/mdl_prof.php';
 class Ctrl_profs
 {
     public static function index()
