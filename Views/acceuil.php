@@ -1,27 +1,4 @@
 <div class="tete">
-<header>
-    <nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">  
-    <ul class="navbar-nav">
-        <li class="nav-item">
-        <a class="nav-link text-light" href="#Acceuil">Acceuil</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_modules">Modules</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_profs">Profs</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="#section3">Etudiants</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="#section3">Contact</a>
-        </li>
-       
-    </ul>
-    </nav>
-</header>
-
 
 <h1 style="margin-top: 70px;"></h1>  
 
@@ -47,8 +24,11 @@
   </section>
 
 </div>
-
-
+<?php 
+if (isset($status)) {
+  echo $status;  
+}
+?>
 
 
 <section class="features" id="features">
