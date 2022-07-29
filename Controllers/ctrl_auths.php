@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'Models/mdl_prof.php';
 include 'Models/mdl_etudiant.php';
 
@@ -7,6 +8,8 @@ include 'Models/mdl_etudiant.php';
         public static function index()
         {
             extract($_POST) ;
+            
+            $_SESSION["status"] = $status;
 
             // switch ($status) {
             //     case 'etudiant':
@@ -21,7 +24,7 @@ include 'Models/mdl_etudiant.php';
                 
             // }
 
-            header("location:index.php?page=Ctrl_acceuils&status=$status");
+            header("location:index.php?page=Ctrl_acceuils");
 
         }
     }

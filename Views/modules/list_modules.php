@@ -7,7 +7,9 @@
         <th>Code</th>
         <th>Heure</th>
         <th>Prof</th>
+        <?php if ($_SESSION["status"] == 'admin') {?>  
         <th colspan="2">Action</th>
+        <?php } ?>
     </tr>
     </thead>
     <tbody class="text-center">
@@ -17,8 +19,10 @@
         <td><?= $module['code']?></td>
         <td><?= $module['heure']?></td>
         <td>Apio</td>
+        <?php if ($_SESSION["status"] == 'admin') {?>  
         <td><a href="/mine/PHP/index.php?page=Ctrl_modules&view=edit&id=<?= $module['id']?>" class="btn btn-sm bg-dark"><img src="/mine/PHP/assets/img/edit.png" class=""></a></td>
         <td><a href="/mine/PHP/index.php?page=Ctrl_modules&action=delete&id=<?= $module['id']?>" class="btn btn-sm bg-dark"><img src="/mine/PHP/assets/img/trash.png" class=""></a></td>
+        <?php } ?>
     </tr>
     <?php } ?>
     </tbody>

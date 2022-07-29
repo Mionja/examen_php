@@ -12,7 +12,7 @@
 
       <div class="col-md-12">
         <h1>
-          Bienvenue à
+          Bienvenue à 
         </h1>
 
         <p class="tagline">
@@ -25,8 +25,8 @@
 
 </div>
 <?php 
-if (isset($status)) {
-  echo $status;  
+if (isset($_SESSION["status"])) {
+  echo $_SESSION["status"];  
 }
 ?>
 
@@ -60,14 +60,14 @@ if (isset($status)) {
         <div class="feature-col col-lg-4 col-xs-12">
           <div class="card card-block text-center border-warning">
             <div>
-            <a href="index.php?page=Ctrl_profs" class="text-dark">
+            <a <?php if ($_SESSION["status"] != 'etudiant') {?>href="index.php?page=Ctrl_profs" class="text-dark"<?php } else { ?> class="text-muted"<?php } ?>>
               <div class="feature-icon">
               <img class="bg-dark rounded-circle mt-1" src="/mine/PHP/assets/img/Nos_prof.png" alt="img" style="width: 80px;">
               </div>
             </div>
             <div>
             <h3>NOS PROFS</h3></a>
-              <p>
+              <p <?php if ($_SESSION["status"] != 'etudiant') {?>class="text-dark"<?php } else { ?> class="text-muted"<?php } ?>>
                 Eque feugiat contentiones ei has. Id summo mundi explicari his, nec in maiorum scriptorem.
               </p>
             </div>
