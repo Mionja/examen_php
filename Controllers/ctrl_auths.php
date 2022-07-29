@@ -1,25 +1,28 @@
-<?php 
+<?php
+include 'Models/mdl_prof.php';
+include 'Models/mdl_etudiant.php';
+
     class Ctrl_auths
     {
-        public function index()
+        public static function index()
         {
-            # code...
-        }
-        public function add()
-        {
-            # code...
-        }
-        public function save()
-        {
-            # code...
-        }
-        public function update()
-        {
-            # code...
-        }
-        public function delete()
-        {
-            # code...
+            extract($_POST) ;
+
+            // switch ($status) {
+            //     case 'etudiant':
+                    
+            //         break;
+            //     case 'prof':
+            //         # code...
+            //         break;
+            //     case 'admin':
+            //         # code...
+            //         break;
+                
+            // }
+
+            header("location:index.php?page=Ctrl_acceuils&status=$status");
+
         }
     }
 ?>

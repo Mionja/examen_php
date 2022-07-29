@@ -1,5 +1,4 @@
 <?php 
-    include('../Utils/db.php');
     class Mdl_etudiant 
     {
         public function get_data()

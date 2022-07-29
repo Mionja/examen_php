@@ -1,5 +1,4 @@
-<div class="h2 text-center font-weight-light text-uppercase mt-3">Liste  des Profs</div>
-<a href="/mine/PHP/index.php" class="btn btn-sm btn-outline-dark">Acceuil</a>
+<div class="h2 text-center font-weight-light text-uppercase mt-5 pt-5">Liste  des Profs</div>
 <hr>
 <table class="table table-striped table-borderless table-success table-hover">
     <thead class="text-center text-dark bg-success">

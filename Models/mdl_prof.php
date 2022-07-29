@@ -1,5 +1,4 @@
 <?php
-include 'Utils/db.php';
 
 class Mdl_prof
 {

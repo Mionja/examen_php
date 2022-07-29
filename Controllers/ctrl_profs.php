@@ -1,6 +1,6 @@
 <?php
 
-include 'Models/mdl_prof.php';
+//include 'Models/mdl_prof.php';
 class Ctrl_profs
 {
     public static function index()
@@ -52,6 +52,7 @@ class Ctrl_profs
             }
         } else {
             $profs = Mdl_prof::list_data();
+            $modules = Mdl_module::list_data();
         }
         include('Views/profs/' . $page . '_profs.php');
     }

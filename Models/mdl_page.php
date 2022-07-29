@@ -1,4 +1,6 @@
 <?php 
+include 'Utils/db.php';
+
     class Mdl_page 
     {
         public function get_data()
