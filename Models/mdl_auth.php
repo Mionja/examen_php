@@ -1,21 +1,38 @@
 <?php 
     class Mdl_auth
     {
-        public function get_data()
-        {
-            # code...
+        public static function db(){
+            $host = "localhost";
+            $dbname = "examen_php";
+            $login = "root";
+            $pass = "";
+            $pdo = new PDO('mysql:host='.$host.';dbname='.$dbname, $login, $pass);
+            return $pdo;
         }
-        public function save_data()
+        public static function get_email_prof()
         {
-            # code...
+            $query = "SELECT email FROM profs ORDER BY id";
+            return self::db()->query($query)->fetchAll();
         }
-        public function set_data()
+        public static function get_email_etudiant()
         {
-            # code...
+            $query = "SELECT email FROM etudiants";
+            return self::db()->query($query)->fetchAll();
         }
-        public function detele_data()
+        public function get_password_etudiant($id)
         {
-            # code...
+            $query = "SELECT password FROM etudiants WHERE id=".$id;
+            return self::db()->query($query)->fetch();
+        }
+        public function get_password_prof($id)
+        {
+            $query = "SELECT mdp FROM profs WHERE id=".$id;
+            return self::db()->query($query)->fetch();
+        }
+        public static function verify_email($email)
+        {
+            $query = "SELECT * FROM etudiants WHERE email=".$email;
+            return self::db()->prepare($query)->fetch();
         }
     }
 ?>
