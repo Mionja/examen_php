@@ -21,25 +21,28 @@ class Ctrl_etudiants
         $action = isset($_GET['action']) ? $_GET['action'] : NULL;
         switch ($action) {
             case 'add':
-                if (isset($_POST['add'])) {
+                if (isset($_POST['add']) && isset($_FILES['photo'])) {
                     extract($_POST);
 
-                    $photo = $_FILES['photo'];
-                    $tmpName = $photo['tmp_name'];
-                    $name = $photo['name'];
-                    $size = $photo['size'];
+                    // $photo = $_FILES['photo'];
+                    // $tmpName = $photo['tmp_name'];
+                    $name = $_FILES['photo']['name'];
+                    // $size = $photo['size'];
 
-                    $tabExt = explode('.', $name);
-                    $extension = strtolower(end($tabExt));
-                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-                    $maxSize = 400000;
+                    // $tabExt = explode('.', $name);
+                    // $extension = strtolower(end($tabExt));
+                    // $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+                    // $maxSize = 400000;
                     
-                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
-                    $target_path = $destination_path.basename($name);
-                    @move_uploaded_file($tmpName, $target_path);
+                    // $destination_path = getcwd().DIRECTORY_SEPARATOR;
+                    // $target_path = $destination_path.basename($name);
+                    // @move_uploaded_file($tmpName, $target_path);
 
                     Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$name,$password);
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
+                }
+                else{
+                    header("location:/mine/PHP/index.php?page=Ctrl_etudiants&view=add");
                 }
                 break;
             case 'delete':
