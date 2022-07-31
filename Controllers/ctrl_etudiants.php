@@ -13,7 +13,9 @@ class Ctrl_etudiants
             case 'edit':
                 self::theView($view);
                 break;
-
+            case 'details':
+                self::theView($view);
+                break;
             default:
                 self::theView();
                 break;
@@ -55,7 +57,8 @@ class Ctrl_etudiants
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb, $photo,$password, $id);
+                    $name = $_FILES['photo']['name'];
+                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb, $name,$password, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
                 }
                 break;
@@ -64,7 +67,7 @@ class Ctrl_etudiants
     public static function theView($page = 'list')
     {
         if ($page != "list") {
-            if ($page == "edit" && isset($_GET['id'])) {
+            if ( ($page == "edit"  | $page == 'details') && isset($_GET['id'])) {
                 $etudiant = Mdl_etudiant::get_data($_GET['id']);   
             }
         } else {

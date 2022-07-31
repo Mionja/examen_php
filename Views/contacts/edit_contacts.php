@@ -18,7 +18,7 @@
 
         <div class="text-center">
             <div class="mb-3">
-                <button type="submit" name="add" class="btn btn-success mt-5">Enregistrer</button>
+                <button type="submit" name="update" class="btn btn-success mt-5">Enregistrer</button>
             </div>
         </div>
     </form>

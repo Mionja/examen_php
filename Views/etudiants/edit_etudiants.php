@@ -3,6 +3,7 @@
 <hr>
 <div class="container w-75">
 <form action="/mine/PHP/index.php?page=Ctrl_etudiants&action=edit" method="post" class="form" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $etudiant['id']?>">
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control" value="<?= $etudiant['nom']?>"><br>
     <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control" value="<?= $etudiant['prenom']?>"><br>
     <label for="email">Email :</label><input type="email" name="email" id="email" class="form-control" required value="<?= $etudiant['email']?>"><br>
@@ -14,7 +15,7 @@
     <label for="password" class="form-label">Password :</label><input type="password" name="password" id="password" required class="form-control" value="<?= $etudiant['password']?>"><br>
     <div class="text-center">
         <div class="mb-3">
-        <button type="submit" name="add" class="btn btn-primary">Enregistrer</button>
+        <button type="submit" name="update" class="btn btn-primary">Enregistrer</button>
         </div>
         <div class="col">
         <a href="/mine/PHP/index.php?page=Ctrl_etudiants" class="btn btn-dark">Liste des etudiants</a>

@@ -1,7 +1,5 @@
-
-
     <div class="container">
-        <h3 class="text-center" style="font-style:italic">Detail sur <?= $profs['nom']?></h3>
+        <h3 class="text-center" style="font-style:italic">Detail sur le professeur: <?= $profs['nom']?></h3>
         <hr>
     </div>
 
@@ -28,6 +26,7 @@
             </ul>
             </p>
     </div>
+    
 </div>
 
 <div class="col text-center mt-3">
