@@ -14,6 +14,9 @@ class Ctrl_profs
             case 'edit':
                 self::theView($view);
                 break;
+            case 'details':
+                self::theView($view);
+                break;
 
             default:
                 self::theView();
@@ -22,10 +25,28 @@ class Ctrl_profs
         $action = isset($_GET['action']) ? $_GET['action'] : NULL;
         switch ($action) {
             case 'add':
-                if (isset($_POST['add'])) {
+                if (isset($_POST['add']) && isset($_FILES['photo'])) {
                     extract($_POST);
-                    Mdl_prof::save_data($nom, $email);
+
+                    $tmpName = $_FILES['photo']['tmp_name'];
+                    $name = $_FILES['photo']['name'];
+                    $size = $_FILES['photo']['size'];
+
+                    $tabExt = explode('.', $name);
+                    $extension = strtolower(end($tabExt));
+                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+                    $maxSize = 400000;
+
+                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
+                    $target_path =$destination_path.basename($name);
+                    @move_uploaded_file($tmpName, $target_path);                   
+
+                    Mdl_prof::save_data($nom,$prenom ,$email, $name,$mdp);
                     header("location:/mine/PHP/index.php?page=Ctrl_profs");
+                }
+                else{
+                    ?> <script>alert("Formulaire non rempli")</script><?php
+                    header("location:/mine/PHP/index.php?page=Ctrl_profs&view=add");
                 }
                 break;
             case 'delete':
@@ -38,7 +59,22 @@ class Ctrl_profs
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-                    Mdl_prof::set_data($nom, $email, $id);
+
+                    $photo = $_FILES['photo'];
+                    $tmpName = $photo['tmp_name'];
+                    $name = $photo['name'];
+                    $size = $photo['size'];
+
+                    $tabExt = explode('.', $name);
+                    $extension = strtolower(end($tabExt));
+                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+                    $maxSize = 400000;
+                    
+                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
+                    $target_path = $destination_path.basename($name);
+                    @move_uploaded_file($tmpName, $target_path);
+
+                    Mdl_prof::set_data($nom,$prenom, $email, $name,$mdp, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_profs");
                 }
                 break;
@@ -46,13 +82,18 @@ class Ctrl_profs
     }
     public static function theView($page = 'list')
     {
-        if ($page != "list") {
-            if ($page == "edit" && isset($_GET['id'])) {
-                $profs = Mdl_prof::get_data($_GET['id']);   
+        if ($page != "list") 
+        {
+            if ($page == 'edit' | $page == 'details') {
+                $id = isset($_GET['id']) ? $_GET['id'] : NULL;
+                $profs = Mdl_prof::get_data($id);
             }
-        } else {
-            $profs = Mdl_prof::list_data();
             $modules = Mdl_module::list_data();
+        }
+        
+        else 
+        {
+            $profs = Mdl_prof::list_data();
         }
         include('Views/profs/' . $page . '_profs.php');
     }

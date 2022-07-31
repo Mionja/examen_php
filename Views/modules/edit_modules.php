@@ -5,7 +5,7 @@
     <form action="/mine/PHP/index.php?page=Ctrl_modules&action=edit" method="post" class="form">
     <input type="hidden" name="id" value="<?= $module['id'] ?>"><br>
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?= $module['nom']?>" required class="form-control"><br>
-    <label for="prof">Prof :</label><input type="text" name="prof" id="prof" class="form-control" required><br>
+    
     <div class="row">
         <div class="col">
             <label for="code">Code :</label><input type="number" name="code" id="code" class="form-control" value="<?= $module['code']?>" required><br>

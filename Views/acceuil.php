@@ -6,7 +6,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <img src="/mine/PHP/assets/img/logo.png" alt="logo">
+          <img src="/mine/PHP/assets/img/esti.jpg" class="img-fluid" style="width:100px" alt="logo">
         </div>
       </div>
 
@@ -18,18 +18,12 @@
         <p class="tagline">
         ESTI
         </p>
-        <a class="btn btn-success rounded" href="#features">Accedez au menu</a>
+        <a class="btn btn-dark rounded" href="#features">Accedez au menu</a>
       </div>
     </div>
   </section>
 
 </div>
-<?php 
-if (isset($_SESSION["status"])) {
-  echo $_SESSION["status"];  
-}
-?>
-
 
 <section class="features" id="features">
     <div class="container">
@@ -41,7 +35,7 @@ if (isset($_SESSION["status"])) {
         <div class="feature-col col-lg-4 col-xs-12">
           <div class="card card-block text-center border-dark">
             <div>
-            <a href="" class="text-dark">
+            <a href="index.php?page=Ctrl_etudiants" class="text-dark">
               <div class="feature-icon">
               <img class="bg-dark rounded-circle mt-1" src="/mine/PHP/assets/img/Nos_etudiant.png" alt="img" style="width: 80px;">
               </div>
@@ -75,7 +69,7 @@ if (isset($_SESSION["status"])) {
         </div>
 
         <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center border-success">
+          <div class="card card-block text-center border-danger">
               <div>
                 <a href="index.php?page=Ctrl_modules" class= "text-dark">
                 <div class="feature-icon">

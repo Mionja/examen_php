@@ -4,7 +4,7 @@
 <div class="container w-75">
 <form action="/mine/PHP/index.php?page=Ctrl_modules&action=add" method="post" class="form">
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
-    <label for="prof">Prof :</label><input type="text" name="prof" id="prof" class="form-control" required><br>
+    
     <div class="row">
         <div class="col">
             <label for="code">Code :</label><input type="number" name="code" id="code" class="form-control" required><br>

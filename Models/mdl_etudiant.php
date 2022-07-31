@@ -1,21 +1,36 @@
-<?php 
-    class Mdl_etudiant 
+<?php
+
+class Mdl_etudiant
+{
+    public static function list_data()
     {
-        public function get_data()
-        {
-            
-        }
-        public function save_data()
-        {
-            # code...
-        }
-        public function set_data()
-        {
-            # code...
-        }
-        public function detele_data()
-        {
-            # code...
-        }
+        $query = "SELECT * FROM etudiants ORDER BY nom";
+        return db_connect()->query($query)->fetchAll();
     }
-?>
+
+    public static function save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password)
+    {
+        $query = "INSERT INTO etudiants(nom,prenom,date_naissance,cin,email,tel,comptefb,photo,password) VALUES (?,?,?,?,?,?,?,?,?)";
+        $q = db_connect()->prepare($query);
+        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password));
+    }
+
+    public static function get_data($id)
+    {
+        $query = "SELECT * FROM etudiants WHERE id=".$id;
+        return db_connect()->query($query)->fetch();
+    }
+
+    public static function set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password, $id)
+    {
+        $query = "UPDATE etudiants SET nom = ?,prenom = ?,date_naissance = ?,cin = ?,email = ?,tel = ?,comptefb = ?,photo = ?,password = ? WHERE id=?";
+        $q = db_connect()->prepare($query);
+        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password, $id));
+    }
+    
+    public static function delete_data($id)
+    {
+        $query = "DELETE FROM etudiants WHERE id =".$id;
+        db_connect()->query($query);
+    }
+}
