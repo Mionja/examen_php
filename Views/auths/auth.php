@@ -18,7 +18,8 @@
 </head>
 <body style="background-color: #2e292a;">
 
-<form action="../../index.php?auth=test" method="post" class="w-75 mt-5">
+<form action="../../index.php" method="post" class="w-75 mt-5">
+  <input type="hidden" name="auth" value="ok">
         <div class="container py-5 mt-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
@@ -54,7 +55,7 @@
                         </div>
       
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg btn-block" type="submit">Se connecter</button>
+                          <button class="btn btn-dark btn-lg btn-block" type="submit" name="connect">Se connecter</button>
                         </div>
       
                         <a class="small text-muted" href="#!">Mot de passe oublié?</a>

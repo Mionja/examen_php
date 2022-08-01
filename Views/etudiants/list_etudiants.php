@@ -16,7 +16,7 @@
     <tr>
         <td><?= $e['nom']?>  <code class="text-light"><?= $e['prenom']?></code></td>
         <td><?= $e['email']?></td>
-        <td></td>
+        <td><?= $e['tel']?></td>
         <?php if ($_SESSION["status"] == 'admin') {?>        
             <td><a href="/mine/PHP/index.php?page=Ctrl_etudiants&view=details&id=<?= $e['id']?>" class="btn btn-sm" title="Details sur <?= $e['nom']?> "><img src="/mine/PHP/assets/img/detail.png" style="width:20px;"></a></td>
             <td><a href="/mine/PHP/index.php?page=Ctrl_etudiants&view=edit&id=<?= $e['id']?>" class="btn btn-sm" title="Modifier information "><img src="/mine/PHP/assets/img/edit.png" class=""></a></td>

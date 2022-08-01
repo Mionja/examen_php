@@ -1,7 +1,7 @@
      <?php
         include "Views/shared/header.php";
 
-        $auth = isset($_GET['auth']) ? $_GET['auth'] : NULL;
+        $auth = isset($_POST['auth']) ? $_POST['auth'] : NULL;
         
         if (isset($auth)) {
             require('Controllers/Ctrl_auths.php');

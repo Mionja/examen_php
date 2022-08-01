@@ -39,7 +39,7 @@
        
     </ul>
     <div class="col">
-        <a href="/mine/PHP/index.php" class="float-right btn btn-sm btn-outline-warning">Deconnexion</a>
+        <a href="/mine/PHP/index.php?auth=1&dec=1" class="float-right btn btn-sm btn-outline-warning">Deconnexion</a>
     </div>
     </nav>
 </header>
