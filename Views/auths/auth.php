@@ -25,8 +25,22 @@
             <div class="col col-xl-10">
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
-                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block" style="background-image: url(/mine/PHP/assets/img/VECTOR.png);" >
                     <img src="/mine/PHP/assets/img/VECTOR.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    <!-- Aide:  <br> <br>
+                    (Un exemple chacun) <br>
+                    <code class="ml-5"> 
+                        Admin:    <br>
+                        admin@gmail.com || 123 <br>
+                    </code>
+                    <code class="ml-5"> 
+                        Prof:    <br>
+                        test@mail.com || 1323
+                    </code><br>
+                    <code class="ml-5"> 
+                        Etudiant:    <br>
+                        mionjaranaivoarison@gmail.com || 123 
+                    </code> -->
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">

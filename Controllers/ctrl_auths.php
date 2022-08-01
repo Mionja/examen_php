@@ -29,6 +29,7 @@ include 'Models/mdl_auth.php' ;
                             }
                             else {
                                 print("Mot de passe érroné");
+                                header("location:index.php");
                             }
                         }
                         else{
@@ -49,6 +50,7 @@ include 'Models/mdl_auth.php' ;
                                 header("location:index.php?page=Ctrl_acceuils");               
                             }
                             else {
+                                header("location:index.php");
                                 print("Mot de passe érroné");
                             }
                         }
