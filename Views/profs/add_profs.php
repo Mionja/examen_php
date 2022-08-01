@@ -1,4 +1,4 @@
-<div class="h2 text-center font-weight-light text-uppercase my-3">Nouveau Prof</div>
+<div class="h2 text-center font-weight-light text-uppercase my-3 mt-5">Nouveau Prof</div>
 <hr>
 
 <div class="container w-50 border border-rounded pb-3 pt-3 bg-warning" style="background-color:aquamarine;">

@@ -1,3 +1,4 @@
+
 <div class="h2 text-center font-weight-light text-uppercase" style="font-style:italic">Liste  des etudiants</div>
 <hr>
 <table class="table table-striped table-borderless table-dark table-hover">
@@ -10,7 +11,7 @@
         <th colspan="3">Action</th>
         <?php } ?>
     </tr>
-    </thead>
+    </thead>x
     <tbody class="text-center">
     <?php foreach($etudiants as $e) { ?>
     <tr>
