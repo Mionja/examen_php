@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/mine/PHP/assets/css/floating-labels.css">
     <link rel="stylesheet" href="/mine/PHP/assets/css/offcanvas.css">
     <link rel="stylesheet" href="/mine/PHP/assets/js/offcanvas.js">
+    <link rel="stylesheet" href="/mine/PHP/assets/js/holder.min.js">
     <title>Examen PHP</title>
 
 </head>
@@ -45,3 +46,7 @@
     </div>
     </nav>
 </header>
+
+
+
+

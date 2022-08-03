@@ -1,3 +1,4 @@
+
 <div class="tete">
 
 <h1 style="margin-top: 70px;"></h1>  
@@ -6,7 +7,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <img src="/mine/PHP/assets/img/esti.jpg" class="img-fluid" style="width:100px" alt="logo">
+          <img src="/mine/PHP/assets/img/esti.jpg" class="img-fluid mt-5 pt-5" style="width:100px" alt="logo">
         </div>
       </div>
 
@@ -14,11 +15,7 @@
         <h1>
           Bienvenue à
         </h1>
-
-        <p class="tagline">
-        ESTI 
-        </p>
-        <a class="btn btn-dark rounded" href="#features">Accedez au menu</a>
+        <img src="/mine/PHP/assets/css/WAVES.svg" alt="img_sgv" class="mt-3 text-light">
       </div>
     </div>
   </section>
@@ -89,7 +86,3 @@
         </div>
       </div>
 </section>
-
-
-
-

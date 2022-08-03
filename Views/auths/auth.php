@@ -18,7 +18,7 @@
 </head>
 <body style="background-color: #2e292a;">
 
-<form action="../../index.php" method="post" class="w-75 mt-5">
+<form action="/mine/PHP/index.php" method="post" class="w-75 mt-5">
   <input type="hidden" name="auth" value="ok">
         <div class="container py-5 mt-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,20 +27,7 @@
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block" >
                     <img src="/mine/PHP/assets/img/VECTOR.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-                    <!-- Aide:  <br> <br>
-                    (Un exemple chacun) <br>
-                    <code class="ml-5"> 
-                        Admin:    <br>
-                        admin@gmail.com || 123 <br>
-                    </code>
-                    <code class="ml-5"> 
-                        Prof:    <br>
-                        test@mail.com || 1323
-                    </code><br>
-                    <code class="ml-5"> 
-                        Etudiant:    <br>
-                        mionjaranaivoarison@gmail.com || 123 
-                    </code> -->
+                
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
@@ -50,7 +37,11 @@
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <span class="h1 fw-bold mb-0"><img src="/mine/PHP/assets/img/G_logo_esti.jpg" alt="" class="img-fluid mr-5" style="width:200px"></span>
                         </div>
-      
+                          <?php 
+                            if (isset($err)) {
+                               echo '<span class="text-danger h6 bold" style="font-weight: bold;">Erreur :</span> <code class="text-danger">'.$err.'</code>';
+                            }
+                          ?>
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Se connecter sur votre compte</h5>
                         <div class="form-outline mb-4">
                         <div class="small text-muted">Votre status </div>

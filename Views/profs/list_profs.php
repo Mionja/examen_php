@@ -1,39 +1,34 @@
 
 <?php if ($_SESSION["status"] != 'etudiant') {?>    
-<div class="h2 text-center font-weight-light text-uppercase" style="font-style:italic">Liste  des Profs</div>
-<hr>
-<table class="table table-striped table-borderless table-dark table-hover">
-    <thead class="text-center text-light bg-black">
-    <tr>
-        <th>Nom</th>
-        <th>Email</th>
-        <?php if ($_SESSION["status"] == 'admin') {?>    
-        <th colspan="3">Action</th>
-        <?php } ?>
-    </tr>
-    </thead>
-    <tbody class="text-center">
-    <?php foreach($profs as $prof) { ?>
-        <tr>
-            <td><?= $prof['nom']?>  <code class="text-light"><?= $prof['prenom']?></code></td>
-            <td><?= $prof['email']?></td>
-            <td><a href="/mine/PHP/index.php?page=Ctrl_profs&view=details&id=<?= $prof['id']?>" class="btn btn-sm " title="Details sur <?= $prof['nom']?> "><img src="/mine/PHP/assets/img/detail.png" style="width:20px;"></a></td>
-            <?php if ($_SESSION["status"] == 'admin') {?>        
-                <td><a href="/mine/PHP/index.php?page=Ctrl_profs&view=edit&id=<?= $prof['id']?>" class="btn btn-sm " title="Modifier information "><img src="/mine/PHP/assets/img/edit.png" class=""></a></td>
-                <td><a href="/mine/PHP/index.php?page=Ctrl_profs&action=delete&id=<?= $prof['id']?>" class="btn btn-sm " title="Supprimer"><img src="/mine/PHP/assets/img/trash.png" class=""></a></td>
-            <?php } ?>
-            
-            
-        </tr>
-    <?php } ?>
-    </tbody>
-</table>
 
-<?php if ($_SESSION["status"] == 'admin') {?> 
-<div class="text-center mb-3">
-<a href="/mine/PHP/index.php?page=Ctrl_profs&view=add" class="btn btn-warning">Ajouter un prof</a>
-</div>
-<?php } ?>
+    
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+    <div class="border-bottom border-gray pb-2 mb-0"><h3>Liste des profs</h3> 
+    <?php if ($_SESSION["status"] == 'admin') {?> 
+        <small class="d-block text-right mt-3">
+        <a href="/mine/PHP/index.php?page=Ctrl_profs&view=add" class="btn btn-outline-info">Ajouter un prof</a>
+        </small>
+    <?php  } ?>
+    </div>
+    <?php foreach($profs as $prof) { ?>
+    <div class="media text-muted pt-3">
+          <img src="/mine/PHP/assets/uploaded_img/<?= $prof['photo']?>" class="mr-2 rounded mt-4" style="width: 45px; height: 45px;" >
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <?php if ($_SESSION["status"] == 'admin') {?>     
+        <small class="float-right mr-2" style="font-size: 20px;" ><a href="/mine/PHP/index.php?page=Ctrl_profs&action=delete&id=<?= $prof['id']?>" title="Supprimer" class="text-danger">x</a> </small>
+        <?php  } ?>
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <strong class="text-gray-dark" style="font-size: 20px;"><?= $prof['nom']?> <?= $prof['prenom']?></strong>
+                    <?php if ($_SESSION["status"] == 'admin') {?> 
+                    <a href="/mine/PHP/index.php?page=Ctrl_profs&view=edit&id=<?= $prof['id']?>" title="Modifier information" class="mr-5 mt-3 text-success" style="font-size: 16px;">Modifier</a>
+                    <?php  } ?>
+                    <a href="/mine/PHP/index.php?page=Ctrl_profs&view=details&id=<?= $prof['id']?>" title="Details sur <?= $prof['nom']?>" class="mr-5 mt-3" style="font-size: 16px;">Details</a>
+                </div>
+                <span class="d-block"><?= $prof['email']?></span>
+        </div>
+    </div>
+    <?php  } ?>
+    </div>
 
 <?php } 
  else{

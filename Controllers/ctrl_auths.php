@@ -29,13 +29,13 @@ include 'Models/mdl_auth.php' ;
                                 header("location:index.php?page=Ctrl_acceuils");               
                             }
                             else {
-                                print("Mot de passe érroné");
-                                header("location:index.php");
+                                $err = "Mot de passe érroné";
+                                include('Views/auths/auth.php');
                             }
                         }
                         else{
-                            ?><script>alert("Ouups, votre mail n'est pas encore registré chez nous")</script> <?php
-                            header("location:index.php");
+                            $err = "Votre email est invalide";
+                            include('Views/auths/auth.php');
                         }
                         break;
     
@@ -48,30 +48,34 @@ include 'Models/mdl_auth.php' ;
                             // print($p[0]);
                             if ($p[0] == $pass) {
                                 print("prof, votre email est dans notre bdd et votre mot de passe y correspond");   
-                                // $nom = Mdl_auth::get_nom_p($login);
-                                // $_SESSION["nom"] = $nom;
                                 header("location:index.php?page=Ctrl_acceuils");               
                             }
                             else {
-                                header("location:index.php");
-                                print("Mot de passe érroné");
+                                $err = "Mot de passe érroné";
+                                include('Views/auths/auth.php');
                             }
                         }
                         else{
-                            print("Ouups, vous n'êtes pas encore registré chez nous");
-                            header("location:index.php");
+                            $err = "Ouups, vous n'êtes pas encore registré chez nous monsieur/madame le(a) professeur";
+                            include('Views/auths/auth.php');
                         }
                         break;
     
     
                     case 'admin':
-                        if ($login == $mail && $pass == $mdp) {
-                            header("location:index.php?page=Ctrl_acceuils");               
+                        if ($login == $mail) {
+                            if ($pass == $mdp) {
+                                header("location:index.php?page=Ctrl_acceuils");               
                         }
-                        else{
-                            header("location:index.php");
-                            echo 'Mot de passe incorect ou mail invalide';
+                        else {
+                            $err = "Mot de passe érroné";
+                            include('Views/auths/auth.php');
                         }
+                    }
+                    else{
+                        $err = "Email invalide";
+                        include('Views/auths/auth.php');
+                    }
                         break;
                 }   
             }
