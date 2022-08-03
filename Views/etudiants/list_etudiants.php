@@ -11,7 +11,7 @@
         <th colspan="3">Action</th>
         <?php } ?>
     </tr>
-    </thead>x
+    </thead>
     <tbody class="text-center">
     <?php foreach($etudiants as $e) { ?>
     <tr>

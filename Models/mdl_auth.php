@@ -61,6 +61,21 @@
 
             return $stmt->fetch();
         }
+        public static function get_nom_e($email)
+        {
+            $query = "SELECT nom FROM etudiants WHERE email= ?";
+            $stmt = self::db()->prepare($query);
+            $stmt->execute([$email]);
 
+            return $stmt->fetch();
+        }
+        public static function get_nom_p($email)
+        {
+            $query = "SELECT nom FROM profs WHERE email= ?";
+            $stmt = self::db()->prepare($query);
+            $stmt->execute([$email]);
+
+            return $stmt->fetch();
+        }
     }
 ?>

@@ -13,9 +13,15 @@
             <label for="heure">Heure :</label><input type="number" name="heure" id="heure" class="form-control" required><br>
         </div>
     </div>
+    L'enseignant: <select class="form-select" aria-label="Default select example" name="id_prof">
+            <?php foreach($profs as $p) { ?>
+            <option value="<?= $p['id']?>"><?= $p['nom']?></option>
+            <?php } ?>
+
+        </select>
     <div class="text-center">
         <div class="mb-3">
-        <button type="submit" name="add" class="btn btn-primary">Enregistrer</button>
+        <button type="submit" name="add" class="btn btn-primary mt-4">Enregistrer</button>
         </div>
         <div class="col">
         <a href="/mine/PHP/index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>

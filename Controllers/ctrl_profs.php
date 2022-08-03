@@ -87,8 +87,8 @@ class Ctrl_profs
             if ($page == 'edit' | $page == 'details') {
                 $id = isset($_GET['id']) ? $_GET['id'] : NULL;
                 $profs = Mdl_prof::get_data($id);
+                $modules = Mdl_prof::module($id);
             }
-            $modules = Mdl_module::list_data();
         }
         
         else 

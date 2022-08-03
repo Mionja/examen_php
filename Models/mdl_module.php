@@ -8,11 +8,11 @@ class Mdl_module
         return db_connect()->query($query)->fetchAll();
     }
 
-    public static function save_data($nom, $code, $heure)
+    public static function save_data($nom, $code, $heure,$id_prof)
     {
-        $query = "INSERT INTO modules(nom, code, heure) VALUES (?,?,?)";
+        $query = "INSERT INTO modules(nom, code, heure,id_prof) VALUES (?,?,?,?)";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom, $code, $heure));
+        return $q->execute(array($nom, $code, $heure,$id_prof));
     }
 
     public static function get_data($id)
@@ -21,11 +21,11 @@ class Mdl_module
         return db_connect()->query($query)->fetch();
     }
 
-    public static function set_data($nom, $code, $heure, $id)
+    public static function set_data($nom, $code, $heure,$id_prof, $id)
     {
-        $query = "UPDATE modules SET nom = ?, code= ?, heure = ? WHERE id=?";
+        $query = "UPDATE modules SET nom = ?, code= ?, heure = ?,id_prof=? WHERE id=?";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom, $code, $heure, $id));
+        return $q->execute(array($nom, $code, $heure,$id_prof, $id));
     }
     
     public static function delete_data($id)

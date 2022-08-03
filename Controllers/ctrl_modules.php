@@ -23,7 +23,7 @@ class Ctrl_modules
             case 'add':
                 if (isset($_POST['add'])) {
                     extract($_POST);
-                    $test = Mdl_module::save_data($nom, $code, $heure);
+                    $test = Mdl_module::save_data($nom, $code, $heure,$id_prof);
                     header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
@@ -37,7 +37,7 @@ class Ctrl_modules
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-                    Mdl_module::set_data($nom, $code, $heure, $id);
+                    Mdl_module::set_data($nom, $code, $heure, $id,$id_prof);
                     header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
@@ -49,6 +49,7 @@ class Ctrl_modules
             if ($page == "edit" && isset($_GET['id'])) {
                 $module = Mdl_module::get_data($_GET['id']);   
             }
+            $profs = Mdl_prof::list_data();
         } else {
             $modules = Mdl_module::list_data();
         }

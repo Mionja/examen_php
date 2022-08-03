@@ -22,9 +22,10 @@ include 'Models/mdl_auth.php' ;
                         $p = Mdl_auth::verif_mdp_etudiant($login);
     
                         if ($m) {
-                            // print($p[0]);
                             if ($p[0] == $pass) {
                                 print("etudiant, votre email est dans notre bdd et votre mot de passe y correspond");   
+                                // $nom = Mdl_auth::get_nom_e($login);
+                                // $_SESSION["nom"] = $nom;
                                 header("location:index.php?page=Ctrl_acceuils");               
                             }
                             else {
@@ -47,6 +48,8 @@ include 'Models/mdl_auth.php' ;
                             // print($p[0]);
                             if ($p[0] == $pass) {
                                 print("prof, votre email est dans notre bdd et votre mot de passe y correspond");   
+                                // $nom = Mdl_auth::get_nom_p($login);
+                                // $_SESSION["nom"] = $nom;
                                 header("location:index.php?page=Ctrl_acceuils");               
                             }
                             else {
@@ -73,8 +76,7 @@ include 'Models/mdl_auth.php' ;
                 }   
             }
 
-            if (isset($_GET['dec'])) {
-                session_destroy();
+            else{
                 header("location:index.php");
             }
 
