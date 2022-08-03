@@ -14,6 +14,12 @@
             <label for="heure">Heure :</label><input type="number" name="heure" id="heure" class="form-control" value="<?= $module['heure']?>" required><br>
         </div>
     </div>
+    L'enseignant: <select class="form-select" aria-label="Default select example" name="id_prof">
+            <?php foreach($profs as $p) { ?>
+            <option value="<?= $p['id']?>"><?= $p['nom']?></option>
+            <?php } ?>
+
+        </select>
     <div class="text-center">
         <div class="mb-3">
         <button type="submit" name="update" class="btn btn-success">Valider</button>

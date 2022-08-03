@@ -1,5 +1,5 @@
 <?php
-
+include('Utils/fonction.php');
 //include 'Models/mdl_prof.php';
 class Ctrl_profs
 {
@@ -26,22 +26,9 @@ class Ctrl_profs
         switch ($action) {
             case 'add':
                 if (isset($_POST['add']) && isset($_FILES['photo'])) {
-                    extract($_POST);
+                    extract($_POST);          
 
-                    $tmpName = $_FILES['photo']['tmp_name'];
-                    $name = $_FILES['photo']['name'];
-                    $size = $_FILES['photo']['size'];
-
-                    $tabExt = explode('.', $name);
-                    $extension = strtolower(end($tabExt));
-                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-                    $maxSize = 400000;
-
-                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
-                    $target_path =$destination_path.basename($name);
-                    @move_uploaded_file($tmpName, $target_path);                   
-
-                    Mdl_prof::save_data($nom,$prenom ,$email, $name,$mdp);
+                    Mdl_prof::save_data($nom,$prenom ,$email, upload_pic(),$mdp);
                     header("location:/mine/PHP/index.php?page=Ctrl_profs");
                 }
                 else{
@@ -59,22 +46,7 @@ class Ctrl_profs
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-
-                    $photo = $_FILES['photo'];
-                    $tmpName = $photo['tmp_name'];
-                    $name = $photo['name'];
-                    $size = $photo['size'];
-
-                    $tabExt = explode('.', $name);
-                    $extension = strtolower(end($tabExt));
-                    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-                    $maxSize = 400000;
-                    
-                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
-                    $target_path = $destination_path.basename($name);
-                    @move_uploaded_file($tmpName, $target_path);
-
-                    Mdl_prof::set_data($nom,$prenom, $email, $name,$mdp, $id);
+                    Mdl_prof::set_data($nom,$prenom, $email, upload_pic(),$mdp, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_profs");
                 }
                 break;

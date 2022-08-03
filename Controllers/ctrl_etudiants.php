@@ -25,22 +25,7 @@ class Ctrl_etudiants
             case 'add':
                 if (isset($_POST['add']) && isset($_FILES['photo'])) {
                     extract($_POST);
-
-                    // $photo = $_FILES['photo'];
-                    // $tmpName = $photo['tmp_name'];
-                    $name = $_FILES['photo']['name'];
-                    // $size = $photo['size'];
-
-                    // $tabExt = explode('.', $name);
-                    // $extension = strtolower(end($tabExt));
-                    // $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-                    // $maxSize = 400000;
-                    
-                    // $destination_path = getcwd().DIRECTORY_SEPARATOR;
-                    // $target_path = $destination_path.basename($name);
-                    // @move_uploaded_file($tmpName, $target_path);
-
-                    Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$name,$password);
+                    Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$password);
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
                 }
                 else{
@@ -58,7 +43,7 @@ class Ctrl_etudiants
                 if (isset($_POST['update'])) {
                     extract($_POST);
                     $name = $_FILES['photo']['name'];
-                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb, $name,$password, $id);
+                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb, upload_pic(),$password, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
                 }
                 break;

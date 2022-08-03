@@ -8,14 +8,6 @@
         <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" value="<?=$profs['prenom'] ?>" required class="form-control"><br>
         <label for="prof">Email :</label><input type="email" name="email" id="prof" value="<?=$profs['email'] ?>" class="form-control" required><br>
         <label for="prof">Mot de passe :</label><input type="password" name="mdp" id="prof" value="<?=$profs['mdp'] ?>" class="form-control" required><br>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Choisir votre module</option>
-
-            <?php foreach($modules as $module) { ?>
-            <option value="<?= $module['nom']?>"><?= $module['nom']?></option>
-            <?php } ?>
-
-        </select>
         <div class="container mt-5 mb-5">
         <label for="photo">Entrer votre photo: 
             <input type="file" name="photo" id="photo" value="<?=$profs['photo'] ?>" required>

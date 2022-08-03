@@ -5,7 +5,7 @@
 
 <div class="container ">
     <div class="media border p-3 bg-secondary">
-        <img src="/mine/PHP/<?= $profs['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;">
+        <img src="/mine/PHP/assets/uploaded_img/<?= $profs['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;">
         <div class="media-body mt-3">
             <h2 class="u"><?= $profs['nom']?> <span><?= $profs['prenom']?></span></h2>
             <div class="row mt-5">

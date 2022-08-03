@@ -12,7 +12,7 @@
 
       <div class="col-md-12">
         <h1>
-          Bienvenue <?php $_SESSION['nom'];?>
+          Bienvenue à
         </h1>
 
         <p class="tagline">
