@@ -4,13 +4,24 @@
 <div class="container w-50 border border-rounded pb-3 pt-3 bg-warning" style="background-color:aquamarine;">
     <form action="./index.php?page=Ctrl_profs&action=edit" method="post" enctype="multipart/form-data" class="form">
         <input type="hidden" name="id" value="<?= $profs['id'] ?>">
+        <label class="form-label" for="genre">Votre genre</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" value="homme" checked>Homme
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="genre" value="femme">Femme
+        </div>
         <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?=$profs['nom'] ?>" required class="form-control"><br>
         <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" value="<?=$profs['prenom'] ?>" required class="form-control"><br>
-        <label for="prof">Email :</label><input type="email" name="email" id="prof" value="<?=$profs['email'] ?>" class="form-control" required><br>
-        <label for="prof">Mot de passe :</label><input type="password" name="mdp" id="prof" value="<?=$profs['mdp'] ?>" class="form-control" required><br>
+        <label for="email">Email :</label><input type="email" name="email" id="email" value="<?=$profs['email'] ?>" class="form-control" required><br>
+        <label for="age">Votre Age :</label><input type="number" name="age" class="form-control" required value="<?=$profs['age'] ?>"><br>
+        <label for="tel">Numero(Tel):</label><input type="number" name="tel" class="form-control" required value="<?=$profs['tel'] ?>"><br>
+        <label for="adresse">Votre adresse :</label><input type="text" name="adresse" class="form-control" required value="<?=$profs['adresse'] ?>"><br>
+        <label for="reseau">Reseaux Sociaux :</label><input type="text" name="reseau" class="form-control" required value="<?=$profs['reseau'] ?>"><br>
+        <label for="mdp">Mot de passe :</label><input type="password" name="mdp" id="mdp" value="<?=$profs['mdp'] ?>" class="form-control" required><br>
         <div class="container mt-5 mb-5">
         <label for="photo">Entrer votre photo: 
-            <input type="file" name="photo" id="photo" value="<?=$profs['photo'] ?>" required>
+            <input type="file" name="photo" id="photo" value="<?=$profs['photo'] ?>">
         </label>
         </div>
 

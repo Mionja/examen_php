@@ -34,7 +34,7 @@ class Ctrl_profs
                         include('Views/profs/add_profs.php');
                     }
                     else{
-                        Mdl_prof::save_data($nom,$prenom ,$email, upload_pic(),$mdp);
+                        Mdl_prof::save_data($nom,$prenom ,$email, $age, $tel, $adresse, $reseau, upload_pic(),$mdp);
                         header("location:./index.php?page=Ctrl_profs");
                     }
                 }
@@ -50,7 +50,7 @@ class Ctrl_profs
                 if (isset($_POST['update'])) {
                     extract($_POST);
                     
-                    Mdl_prof::set_data($nom,$prenom, $email, upload_pic(),$mdp, $id);
+                    Mdl_prof::set_data($nom,$prenom, $email, $age, $tel, $adresse, $reseau, upload_pic(),$mdp, $id);
                     header("location:./index.php?page=Ctrl_profs");
                 }
                 break;

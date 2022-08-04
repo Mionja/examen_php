@@ -10,7 +10,7 @@ if (isset($err)) {
   <form action="./index.php?page=Ctrl_etudiants&action=add" method="post" class="form" enctype="multipart/form-data">
     <label class="form-label" for="genre">Votre genre</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="genre" value="homme">Homme
+      <input class="form-check-input" type="radio" name="genre" value="homme" checked>Homme
     </div>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="genre" value="femme">Femme
