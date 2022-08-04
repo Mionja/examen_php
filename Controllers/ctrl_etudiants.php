@@ -25,8 +25,18 @@ class Ctrl_etudiants
             case 'add':
                 if (isset($_POST['add']) && isset($_FILES['photo'])) {
                     extract($_POST);
-                    Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$password);
-                    header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
+                    $m = Mdl_auth::verif_email_etudiant($email);
+
+                    if ($m) 
+                    {
+                        $err = "Un autre etudiant est déjà inscrit sous cet email";
+                        include('Views/etudiants/add_etudiants.php');
+                    }
+                    else
+                    {
+                        Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$password);
+                        header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
+                    }
                 }
                 else{
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants&view=add");
@@ -42,7 +52,7 @@ class Ctrl_etudiants
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-                    $name = $_FILES['photo']['name'];
+
                     Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb, upload_pic(),$password, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_etudiants");
                 }

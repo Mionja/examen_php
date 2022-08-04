@@ -27,13 +27,16 @@ class Ctrl_profs
             case 'add':
                 if (isset($_POST['add']) && isset($_FILES['photo'])) {
                     extract($_POST);          
+                    $m = Mdl_auth::verif_email_prof($email);
 
-                    Mdl_prof::save_data($nom,$prenom ,$email, upload_pic(),$mdp);
-                    header("location:/mine/PHP/index.php?page=Ctrl_profs");
-                }
-                else{
-                    ?> <script>alert("Formulaire non rempli")</script><?php
-                    header("location:/mine/PHP/index.php?page=Ctrl_profs&view=add");
+                    if ($m) {
+                        $err = "Un autre prof est déjà inscrit sous cet email";
+                        include('Views/profs/add_profs.php');
+                    }
+                    else{
+                        Mdl_prof::save_data($nom,$prenom ,$email, upload_pic(),$mdp);
+                        header("location:/mine/PHP/index.php?page=Ctrl_profs");
+                    }
                 }
                 break;
             case 'delete':
@@ -46,6 +49,7 @@ class Ctrl_profs
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
+                    
                     Mdl_prof::set_data($nom,$prenom, $email, upload_pic(),$mdp, $id);
                     header("location:/mine/PHP/index.php?page=Ctrl_profs");
                 }
