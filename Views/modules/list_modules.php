@@ -1,7 +1,7 @@
 <div class="h2 text-center font-weight-light text-uppercase" style="font-style:italic">Liste  des modules</div>
 <hr>
-<table class="table table-striped table-borderless table-dark">
-    <thead class="text-center text-light bg-black">
+<table class="table table-striped">
+    <thead class="text-center">
     <tr>
         <th>Nom</th>
         <th>Code</th>
@@ -21,11 +21,11 @@
         <td><?= $module['code']?></td>
         <td><?= $module['heure']?></td>
         <?php if ($_SESSION["status"] != 'etudiant') {?>  
-        <td><a href="/mine/PHP/index.php?page=Ctrl_profs&view=details&id=<?= $module['id_prof']?>" class="btn btn-sm " title="Details"><img src="/mine/PHP/assets/img/detail.png" style="width:20px;"></a></td>
+        <td><a href="/mine/PHP/index.php?page=Ctrl_profs&view=details&id=<?= $module['id_prof']?>" class="btn btn-sm " title="Details">Cliquez ici</a></td>
         <?php } ?>    
         <?php if ($_SESSION["status"] == 'admin') {?>  
-        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&view=edit&id=<?= $module['id']?>" class="btn btn-sm "><img src="/mine/PHP/assets/img/edit.png" class=""></a></td>
-        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&action=delete&id=<?= $module['id']?>" class="btn btn-sm "><img src="/mine/PHP/assets/img/trash.png" class=""></a></td>
+        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&view=edit&id=<?= $module['id']?>" class="btn btn-sm ">Modifier</a></td>
+        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&action=delete&id=<?= $module['id']?>" class="btn btn-sm text-danger ">Supprimer</a></td>
         <?php } ?>
     </tr>
     <?php } ?>
@@ -33,6 +33,6 @@
 </table>
 <?php if ($_SESSION["status"] == 'admin') {?> 
 <div class="text-center mb-3">
-<a href="/mine/PHP/index.php?page=Ctrl_modules&view=add" class="btn btn-warning">Ajouter un module</a>
+<a href="/mine/PHP/index.php?page=Ctrl_modules&view=add" class="btn btn-outline-info">Ajouter un module</a>
 </div>
 <?php } ?>
