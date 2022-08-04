@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/offcanvas.css">
+    <link rel="stylesheet" href="./assets/js/offcanvas.js">
     <link rel="stylesheet" href="./assets/js/bootstrap.min.js">
     <link rel="stylesheet" href="./assets/js/jquery.min.js">
     <link rel="stylesheet" href="./assets/js/popper.min.js">
-    <link rel="stylesheet" href="./assets/css/font-awesome.css">
-    <link rel="stylesheet" href="./assets/css/floating-labels.css">
-    <link rel="stylesheet" href="./assets/css/offcanvas.css">
-    <link rel="stylesheet" href="./assets/js/offcanvas.js">
-    <link rel="stylesheet" href="./assets/js/holder.min.js">
     <title>Examen PHP</title>
 
 </head>
+
 <body>
-    <div class="container">
-    <header class="mb-5 pb-5">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
-    <ul class="navbar-nav">
-        <li class="nav-item">
-        <a href="./index.php?page=Ctrl_acceuils" class="nav-link text-light" style="font-size: 20px;">Acceuil</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_modules" style="font-size: 20px;">Modules</a>
-        </li>
-        
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_profs" style="font-size: 20px;">Profs</a>
-        </li>
+    <header class="d-block">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="./index.php?page=Ctrl_acceuils">Dev learning</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_etudiants" style="font-size: 20px;">Etudiants</a>
-        </li>
-        <li class="nav-item ml-3">
-        <a class="nav-link text-light" href="index.php?page=Ctrl_contacts" style="font-size: 20px;">Contact</a>
-        </li>
-       
-    </ul>
-    <div class="col">
-        <a href="./index.php?auth=1&dec=1" class="float-right btn btn-sm btn-outline-warning">Deconnexion</a>
-    </div>
-    </nav>
-</header>
-
-
-
-
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link <?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "etudiant") {
+                                                echo 'd-none';
+                                            } ?>" href="index.php?page=Ctrl_profs">Professeurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=Ctrl_etudiants">Etudiants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=Ctrl_modules">Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=Ctrl_contacts">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <a href="./index.php" class="float-right btn btn-sm btn-danger">Deconnexion</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">

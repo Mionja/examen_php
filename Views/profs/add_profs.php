@@ -1,4 +1,4 @@
-<div class="h2 text-center font-weight-light text-uppercase my-3 mt-5 pt-5">Nouveau Prof</div>
+<h2 class="text-center font-weight-light text-uppercase">Nouveau professeur</h2>
 <hr>
 <?php 
       if (isset($err)) {

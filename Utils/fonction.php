@@ -1,7 +1,7 @@
 <?php 
      
 function upload_pic(){
-        if (isset($_POST['add']) || isset($_POST['update'])){
+        if ((isset($_POST['add']) || isset($_POST['update'])) && $_POST['photo']){
             $tmpname = $_FILES["photo"]["tmp_name"];
             $name = $_FILES["photo"]["name"];
             $error = $_FILES["photo"]["error"];
@@ -24,6 +24,13 @@ function upload_pic(){
                 move_uploaded_file($tmpname, './assets/uploaded_img/'.$photo);
             } else{
                 echo "Votre photo a une mauvaise extension ou trop volumineux ou bien y a une erreur";
+            }
+        } else{
+            if($_POST['genre'] == 'femme'){
+                $photo = 'defaultgirl.jpg';
+            }
+            else if($_POST['genre'] == 'homme'){
+                $photo = 'defaultboy.jpg';
             }
         }
         return $photo;

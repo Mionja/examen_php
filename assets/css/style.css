@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#container_home {
+    background-image: url('../img/classroom-2787754.jpg');
+    height: 100vh;
+}
+
+.bg-waves {
+    background-image: url('/assets/img/WAVES.svg');
+}
+
+#container_etudiant {
+    background-image: url('../img/children-876543.jpg');
+    color: white;
+}
+
+label {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#container_prof {
+    background-image: url('../img/student-849825.jpg');
+    height: 100vh;
+}
+
+#container_module {
+    background-image: url('../img/computer-workstation-415138.jpg');
+    height: 100vh;
+}
+
+#container_contact {
+    background-image: url('../img/man-2562325_1920.jpg');
+    height: 100vh;
+}
+
+.bg-image {
+    background: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-transparant {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.hover:hover {
+    letter-spacing: 3px;
+    transition: 0.75s;
+}
