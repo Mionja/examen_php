@@ -7,7 +7,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <img src="/mine/PHP/assets/img/esti.jpg" class="img-fluid mt-5 pt-5" style="width:100px" alt="logo">
+          <img src="./assets/img/esti.jpg" class="img-fluid mt-5 pt-5" style="width:100px" alt="logo">
         </div>
       </div>
 
@@ -15,7 +15,7 @@
         <h1>
           Bienvenue à
         </h1>
-        <img src="/mine/PHP/assets/css/WAVES.svg" alt="img_sgv" class="mt-3 text-light">
+        <img src="./assets/css/WAVES.svg" alt="img_sgv" class="mt-3 text-light">
       </div>
     </div>
   </section>
@@ -34,7 +34,7 @@
             <div>
             <a href="index.php?page=Ctrl_etudiants" class="text-dark">
               <div class="feature-icon">
-              <img class="bg-dark rounded-circle mt-1" src="/mine/PHP/assets/img/Nos_etudiant.png" alt="img" style="width: 80px;">
+              <img class="bg-dark rounded-circle mt-1" src="./assets/img/Nos_etudiant.png" alt="img" style="width: 80px;">
               </div>
             </div>
             <div>
@@ -53,7 +53,7 @@
             <div>
             <a <?php if ($_SESSION["status"] != 'etudiant') {?>href="index.php?page=Ctrl_profs" class="text-dark"<?php } else { ?> class="text-muted"<?php } ?>>
               <div class="feature-icon">
-              <img class="bg-dark rounded-circle mt-1" src="/mine/PHP/assets/img/Nos_prof.png" alt="img" style="width: 80px;">
+              <img class="bg-dark rounded-circle mt-1" src="./assets/img/Nos_prof.png" alt="img" style="width: 80px;">
               </div>
             </div>
             <div>
@@ -70,7 +70,7 @@
               <div>
                 <a href="index.php?page=Ctrl_modules" class= "text-dark">
                 <div class="feature-icon">
-                    <img class="bg-dark rounded-circle mt-1" src="/mine/PHP/assets/img/Nos_module.png" alt="img" style="width: 80px;">
+                    <img class="bg-dark rounded-circle mt-1" src="./assets/img/Nos_module.png" alt="img" style="width: 80px;">
                 </div>
               </div>
                 <div>

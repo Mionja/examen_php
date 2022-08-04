@@ -2,7 +2,7 @@
 <div class="h2 text-center font-weight-light text-uppercase my-3">Modification etudiant</div>
 <hr>
 <div class="container w-75">
-<form action="/mine/PHP/index.php?page=Ctrl_etudiants&action=edit" method="post" class="form" enctype="multipart/form-data">
+<form action="./index.php?page=Ctrl_etudiants&action=edit" method="post" class="form" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $etudiant['id']?>">
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control" value="<?= $etudiant['nom']?>"><br>
     <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control" value="<?= $etudiant['prenom']?>"><br>
@@ -18,7 +18,7 @@
         <button type="submit" name="update" class="btn btn-primary">Enregistrer</button>
         </div>
         <div class="col">
-        <a href="/mine/PHP/index.php?page=Ctrl_etudiants" class="btn btn-dark">Liste des etudiants</a>
+        <a href="./index.php?page=Ctrl_etudiants" class="btn btn-dark">Liste des etudiants</a>
         </div>
     </div>
 </form>

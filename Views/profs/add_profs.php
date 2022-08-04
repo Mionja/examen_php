@@ -6,7 +6,7 @@
       }   
     ?>
 <div class="container w-50 border border-rounded pb-3 pt-3 bg-warning" style="background-color:aquamarine;">
-    <form action="/mine/PHP/index.php?page=Ctrl_profs&action=add" method="post" enctype="multipart/form-data" class="form">
+    <form action="./index.php?page=Ctrl_profs&action=add" method="post" enctype="multipart/form-data" class="form">
         <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
         <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control"><br>
         <label for="prof">Email :</label><input type="email" name="email" id="prof" class="form-control" required><br>
@@ -27,5 +27,5 @@
    
 </div>
 <div class="col text-center mt-4">
-                <a href="/mine/PHP/index.php?page=Ctrl_profs" class="btn btn-dark">Liste des profs</a>
+                <a href="./index.php?page=Ctrl_profs" class="btn btn-dark">Liste des profs</a>
         </div>

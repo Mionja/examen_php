@@ -21,11 +21,11 @@
         <td><?= $module['code']?></td>
         <td><?= $module['heure']?></td>
         <?php if ($_SESSION["status"] != 'etudiant') {?>  
-        <td><a href="/mine/PHP/index.php?page=Ctrl_profs&view=details&id=<?= $module['id_prof']?>" class="btn btn-sm " title="Details">Cliquez ici</a></td>
+        <td><a href="./index.php?page=Ctrl_profs&view=details&id=<?= $module['id_prof']?>" class="btn btn-sm " title="Details">Cliquez ici</a></td>
         <?php } ?>    
         <?php if ($_SESSION["status"] == 'admin') {?>  
-        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&view=edit&id=<?= $module['id']?>" class="btn btn-sm ">Modifier</a></td>
-        <td><a href="/mine/PHP/index.php?page=Ctrl_modules&action=delete&id=<?= $module['id']?>" class="btn btn-sm text-danger ">Supprimer</a></td>
+        <td><a href="./index.php?page=Ctrl_modules&view=edit&id=<?= $module['id']?>" class="btn btn-sm ">Modifier</a></td>
+        <td><a href="./index.php?page=Ctrl_modules&action=delete&id=<?= $module['id']?>" class="btn btn-sm text-danger ">Supprimer</a></td>
         <?php } ?>
     </tr>
     <?php } ?>
@@ -33,6 +33,6 @@
 </table>
 <?php if ($_SESSION["status"] == 'admin') {?> 
 <div class="text-center mb-3">
-<a href="/mine/PHP/index.php?page=Ctrl_modules&view=add" class="btn btn-outline-info">Ajouter un module</a>
+<a href="./index.php?page=Ctrl_modules&view=add" class="btn btn-outline-info">Ajouter un module</a>
 </div>
 <?php } ?>

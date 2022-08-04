@@ -24,21 +24,21 @@ class Ctrl_modules
                 if (isset($_POST['add'])) {
                     extract($_POST);
                     $test = Mdl_module::save_data($nom, $code, $heure,$id_prof);
-                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
+                    header("location:./index.php?page=Ctrl_modules");
                 }
                 break;
             case 'delete':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     Mdl_module::delete_data($id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
+                    header("location:./index.php?page=Ctrl_modules");
                 }
                 break;
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
                     Mdl_module::set_data($nom, $code, $heure, $id,$id_prof);
-                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
+                    header("location:./index.php?page=Ctrl_modules");
                 }
                 break;
         }

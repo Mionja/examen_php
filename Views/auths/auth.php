@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="/mine/PHP/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/mine/PHP/assets/js/bootstrap.js">
-    <link rel="stylesheet" href="/mine/PHP/assets/js/jquery.min.js">
-    <link rel="stylesheet" href="/mine/PHP/assets/js/popper.min.js">
-    <link rel="stylesheet" href="/mine/PHP/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="/mine/PHP/assets/css/floating-labels.css">
-    <link rel="stylesheet" href="/mine/PHP/assets/css/offcanvas.css">
-    <link rel="stylesheet" href="/mine/PHP/assets/js/offcanvas.js">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/js/bootstrap.js">
+    <link rel="stylesheet" href="./assets/js/jquery.min.js">
+    <link rel="stylesheet" href="./assets/js/popper.min.js">
+    <link rel="stylesheet" href="./assets/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/floating-labels.css">
+    <link rel="stylesheet" href="./assets/css/offcanvas.css">
+    <link rel="stylesheet" href="./assets/js/offcanvas.js">
     <title>Examen PHP</title>
 
 </head>
 <body style="background-color: #2e292a;">
 
-<form action="/mine/PHP/index.php" method="post" class="w-75 mt-5">
+<form action="./index.php" method="post" class="w-75 mt-5">
   <input type="hidden" name="auth" value="ok">
         <div class="container py-5 mt-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -26,7 +26,7 @@
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block" >
-                    <img src="/mine/PHP/assets/img/VECTOR.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    <img src="./assets/img/VECTOR.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                 
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -35,7 +35,7 @@
                       <div>
       
                         <div class="d-flex align-items-center mb-3 pb-1">
-                          <span class="h1 fw-bold mb-0"><img src="/mine/PHP/assets/img/G_logo_esti.jpg" alt="" class="img-fluid mr-5" style="width:200px"></span>
+                          <span class="h1 fw-bold mb-0"><img src="./assets/img/G_logo_esti.jpg" alt="" class="img-fluid mr-5" style="width:200px"></span>
                         </div>
                           <?php 
                             if (isset($err)) {

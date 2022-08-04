@@ -2,7 +2,7 @@
 <hr>
 
 <div class="container w-50 border border-rounded pb-3 pt-3 bg-warning" style="background-color:aquamarine;">
-    <form action="/mine/PHP/index.php?page=Ctrl_profs&action=edit" method="post" enctype="multipart/form-data" class="form">
+    <form action="./index.php?page=Ctrl_profs&action=edit" method="post" enctype="multipart/form-data" class="form">
         <input type="hidden" name="id" value="<?= $profs['id'] ?>">
         <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?=$profs['nom'] ?>" required class="form-control"><br>
         <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" value="<?=$profs['prenom'] ?>" required class="form-control"><br>
@@ -22,5 +22,5 @@
     </form>
 </div>
 <div class="col text-center mt-4">
-                <a href="/mine/PHP/index.php?page=Ctrl_profs" class="btn btn-dark">Liste des profs</a>
+                <a href="./index.php?page=Ctrl_profs" class="btn btn-dark">Liste des profs</a>
         </div>

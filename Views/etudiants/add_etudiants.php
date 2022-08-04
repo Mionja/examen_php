@@ -7,7 +7,7 @@
       }   
 ?>
 <div class="container w-75">
-<form action="/mine/PHP/index.php?page=Ctrl_etudiants&action=add" method="post" class="form" enctype="multipart/form-data">
+<form action="./index.php?page=Ctrl_etudiants&action=add" method="post" class="form" enctype="multipart/form-data">
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
     <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control"><br>
     <label for="email">Email :</label><input type="email" name="email" id="email" class="form-control" required><br>
@@ -22,7 +22,7 @@
         <button type="submit" name="add" class="btn btn-primary">Enregistrer</button>
         </div>
         <div class="col">
-        <a href="/mine/PHP/index.php?page=Ctrl_etudiants" class="btn btn-dark">Liste des etudiants</a>
+        <a href="./index.php?page=Ctrl_etudiants" class="btn btn-dark">Liste des etudiants</a>
         </div>
     </div>
 </form>

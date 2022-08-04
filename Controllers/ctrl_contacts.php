@@ -28,14 +28,14 @@ class Ctrl_contacts
                 if (isset($_POST['add'])) {
                     extract($_POST);
                     Mdl_contact::save_data($nom,$email, $fonction);
-                    header("location:/mine/PHP/index.php?page=Ctrl_contacts");
+                    header("location:./index.php?page=Ctrl_contacts");
                 }
                 break;
             case 'delete':
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     Mdl_contact::delete_data($id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_contacts");
+                    header("location:./index.php?page=Ctrl_contacts");
                 }
                 break;
             case 'edit':
@@ -43,7 +43,7 @@ class Ctrl_contacts
                     print_r($_POST);
                     extract($_POST);
                     Mdl_contact::set_data($nom,$email, $fonction,$id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_contacts");
+                    header("location:./index.php?page=Ctrl_contacts");
                 }
                 break;
         }
