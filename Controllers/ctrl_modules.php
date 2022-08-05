@@ -37,7 +37,7 @@ class Ctrl_modules
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-                    Mdl_module::set_data($nom, $code, $heure, $id,$id_prof);
+                    Mdl_module::set_data($nom, $code, $heure, $id_prof,$id);
                     header("location:/mine/PHP/index.php?page=Ctrl_modules");
                 }
                 break;
