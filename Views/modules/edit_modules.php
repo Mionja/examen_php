@@ -2,7 +2,7 @@
 <hr>
 
 <div class="container w-75">
-    <form action="/mine/PHP/index.php?page=Ctrl_modules&action=edit" method="post" class="form">
+    <form action="./index.php?page=Ctrl_modules&action=edit" method="post" class="form">
     <input type="hidden" name="id" value="<?= $module['id'] ?>"><br>
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?= $module['nom']?>" required class="form-control"><br>
     
@@ -25,7 +25,7 @@
         <button type="submit" name="update" class="btn btn-success">Valider</button>
         </div>
         <div class="col">
-        <a href="/mine/PHP/index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>
+        <a href="./index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>
         </div>
     </div>
 </form>

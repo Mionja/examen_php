@@ -21,5 +21,5 @@
 </div>
 <div class="div text-center">
     <button class="btn btn-warning">Envoyer</button> 
-    <a href="/mine/PHP/index.php?page=Ctrl_contacts" class="btn btn-dark">Revenir</a>
+    <a href="./index.php?page=Ctrl_contacts" class="btn btn-dark">Revenir</a>
 </div>

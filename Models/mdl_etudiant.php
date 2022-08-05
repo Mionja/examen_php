@@ -8,11 +8,11 @@ class Mdl_etudiant
         return db_connect()->query($query)->fetchAll();
     }
 
-    public static function save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password)
+    public static function save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password)
     {
-        $query = "INSERT INTO etudiants(nom,prenom,date_naissance,cin,email,tel,comptefb,photo,password) VALUES (?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO etudiants(nom,prenom,date_naissance,cin,email,tel,comptefb,photo,genre,password) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password));
+        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password));
     }
 
     public static function get_data($id)
@@ -21,11 +21,11 @@ class Mdl_etudiant
         return db_connect()->query($query)->fetch();
     }
 
-    public static function set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password, $id)
+    public static function set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password, $id)
     {
-        $query = "UPDATE etudiants SET nom = ?,prenom = ?,date_naissance = ?,cin = ?,email = ?,tel = ?,comptefb = ?,photo = ?,password = ? WHERE id=?";
+        $query = "UPDATE etudiants SET nom = ?,prenom = ?,date_naissance = ?,cin = ?,email = ?,tel = ?,comptefb = ?,photo = ?,genre = ?,password = ? WHERE id=?";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$password, $id));
+        return $q->execute(array($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password, $id));
     }
     
     public static function delete_data($id)

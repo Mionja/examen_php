@@ -2,7 +2,7 @@
 <hr>
 
 <div class="container w-75">
-<form action="/mine/PHP/index.php?page=Ctrl_modules&action=add" method="post" class="form">
+<form action="./index.php?page=Ctrl_modules&action=add" method="post" class="form">
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
     
     <div class="row">
@@ -24,7 +24,7 @@
         <button type="submit" name="add" class="btn btn-primary mt-4">Enregistrer</button>
         </div>
         <div class="col">
-        <a href="/mine/PHP/index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>
+        <a href="./index.php?page=Ctrl_modules" class="btn btn-dark">Liste des modules</a>
         </div>
     </div>
 </form>

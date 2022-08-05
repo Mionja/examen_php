@@ -34,8 +34,8 @@ class Ctrl_profs
                         include('Views/profs/add_profs.php');
                     }
                     else{
-                        Mdl_prof::save_data($nom,$prenom ,$email, upload_pic(),$mdp);
-                        header("location:/mine/PHP/index.php?page=Ctrl_profs");
+                        Mdl_prof::save_data($nom,$prenom ,$email, $age, $tel, $adresse, $reseau, upload_pic(),$mdp);
+                        header("location:./index.php?page=Ctrl_profs");
                     }
                 }
                 break;
@@ -43,15 +43,15 @@ class Ctrl_profs
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     Mdl_prof::delete_data($id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_profs");
+                    header("location:./index.php?page=Ctrl_profs");
                 }
                 break;
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
                     
-                    Mdl_prof::set_data($nom,$prenom, $email, upload_pic(),$mdp, $id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_profs");
+                    Mdl_prof::set_data($nom,$prenom, $email, $age, $tel, $adresse, $reseau, upload_pic(),$mdp, $id);
+                    header("location:./index.php?page=Ctrl_profs");
                 }
                 break;
         }
