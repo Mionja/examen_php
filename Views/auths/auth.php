@@ -58,7 +58,7 @@
       
                         <a class="small text-muted" href="#!">Mot de passe oublié?</a>
                         <p class="mb-5 pb-lg-2" style="color: #393f81;">Pas de compte?
-                        <a href="#!" class="text-info">S'inscrire</a></p>
+                        <a href="/PHP/index.php?auth=inscription" class="text-info">S'inscrire</a></p>
                         <a href="#!" class="small text-muted">Bienvenu à ESTI.</a>
                         
                       </div>

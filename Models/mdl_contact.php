@@ -7,6 +7,11 @@ class Mdl_contact
         $query = "SELECT * FROM contacts ORDER BY nom";
         return db_connect()->query($query)->fetchAll();
     }
+    public static function list_data_i()
+    {
+        $query = "SELECT * FROM inscription ORDER BY id";
+        return db_connect()->query($query)->fetchAll();
+    }
 
     public static function save_data($nom,$email, $fonction)
     {

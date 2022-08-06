@@ -2,7 +2,8 @@
         
 
         $auth = isset($_POST['auth']) ? $_POST['auth'] : NULL;
-        if (isset($auth)) {
+        $authS = isset($_GET['auth']) ? $_GET['auth'] : NULL;
+        if (isset($auth) || isset($authS)) {
             require('Controllers/Ctrl_auths.php');
             Ctrl_auths::index();
         }

@@ -31,8 +31,29 @@
                         <?php } ?>
                     </td>
                 </tr>
-            <?php   }
-            ?>
+            <?php   }?>
         </tbody>
     </table>
+    <?php if ($_SESSION["status"] == 'admin') {?> 
+    <h4 class="mt-5">
+        Liste des personnes voulant s'inscrire:
+    </h4>
+        <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+                foreach ($i as $i) {?>
+            <tr>
+                <td><a href= "mailto:<?= $i['email']?>" target="_blank"  class="text-dark"><?= $i['email'] ?></a></td>
+                <td><?= $i['message'] ?></td>
+            </tr>
+        <?php   }?>
+        </tbody>
+    </table>
+    <?php   }?>
 </div>

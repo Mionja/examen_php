@@ -61,6 +61,7 @@ class Ctrl_contacts
         else 
         {
             $contacts = Mdl_contact::list_data();
+            $i = Mdl_contact::list_data_i();
         }
         include('Views/contacts/' . $page . '_contacts.php');
     }
