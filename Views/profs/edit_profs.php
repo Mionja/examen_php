@@ -14,7 +14,6 @@
         <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" value="<?=$profs['nom'] ?>" required class="form-control"><br>
         <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" value="<?=$profs['prenom'] ?>" required class="form-control"><br>
         <label for="email">Email :</label><input type="email" name="email" id="email" value="<?=$profs['email'] ?>" class="form-control" required><br>
-        <label for="age">Votre Age :</label><input type="number" name="age" class="form-control" required value="<?=$profs['age'] ?>"><br>
         <label for="tel">Numero(Tel):</label><input type="number" name="tel" class="form-control" required value="<?=$profs['tel'] ?>"><br>
         <label for="adresse">Votre adresse :</label><input type="text" name="adresse" class="form-control" required value="<?=$profs['adresse'] ?>"><br>
         <label for="reseau">Reseaux Sociaux :</label><input type="text" name="reseau" class="form-control" required value="<?=$profs['reseau'] ?>"><br>

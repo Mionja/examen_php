@@ -18,14 +18,19 @@
         <small class="float-right mr-2" style="font-size: 20px;" ><a href="./index.php?page=Ctrl_profs&action=delete&id=<?= $prof['id']?>" title="Supprimer" class="text-danger">x</a> </small>
         <?php  } ?>
                 <div class="d-flex justify-content-between align-items-center w-100">
-                    <strong class="text-gray-dark" style="font-size: 20px;"><?= $prof['nom']?> <?= $prof['prenom']?>
+                    <strong class="text-gray-dark" style="font-size: 20px;">
                     <?php if ($_SESSION["status"] == 'admin') {?> 
-                    <a href="./index.php?page=Ctrl_profs&view=edit&id=<?= $prof['id']?>" title="Modifier information" class="mr-5 mt-3 text-success" ><img src="./assets/img/modify.png" alt="img_modify" style="width:25px;"></a>
+                    <a href="./index.php?page=Ctrl_profs&view=details&id=<?= $prof['id']?>" title="Details sur <?= $prof['nom']?>" class="mr-5 mt-3 text-dark" style="text-decoration: none;">
                     <?php  } ?>
+                        <?= $prof['nom']?> <?= $prof['prenom']?></a>
+                    <?php if ($_SESSION["status"] == 'admin') {?> 
                     </strong>
-                    <a href="./index.php?page=Ctrl_profs&view=details&id=<?= $prof['id']?>" title="Details sur <?= $prof['nom']?>" class="mr-5 mt-3" style="font-size: 16px;">Details</a>
+                    <a href="./index.php?page=Ctrl_profs&view=edit&id=<?= $prof['id']?>" title="Modifier information" class="mr-5 mt-3 text-info" style="font-size:15px;">Modifier</a>
+                    <?php  } echo'</strong>';?>
                 </div>
-                <span class="d-block"><?= $prof['email']?></span>
+                <span class="d-block">
+                    <a href= "mailto:<?= $prof['email']?>" target="_blank" title="Envoyer un email à <?= $prof['nom']?>" class="text-dark"><?= $prof['email']?></a>
+                </span>
         </div>
     </div>
     <?php  } ?>

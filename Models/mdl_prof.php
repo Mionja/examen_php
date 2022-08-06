@@ -8,11 +8,11 @@ class Mdl_prof
         return db_connect()->query($query)->fetchAll();
     }
 
-    public static function save_data($nom,$prenom, $email, $age, $tel, $adresse, $reseau, $photo, $genre, $mdp)
+    public static function save_data($nom,$prenom, $email, $tel, $adresse, $reseau, $photo, $genre, $mdp)
     {
         $query = "INSERT INTO profs(nom, prenom, email, age, tel, adresse, reseau, photo, genre, mdp) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom,$prenom, $email, $age, $tel, $adresse, $reseau, $photo,$genre,$mdp));
+        return $q->execute(array($nom,$prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp));
     }
 
     public static function get_data($id)
@@ -21,11 +21,11 @@ class Mdl_prof
         return db_connect()->query($query)->fetch();
     }
 
-    public static function set_data($nom, $prenom, $email, $age, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id)
+    public static function set_data($nom, $prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id)
     {
         $query = "UPDATE profs SET nom = ?, prenom=?, email= ?, age= ?, tel= ?, adresse= ?, reseau= ?,photo=?,genre=? ,mdp=? WHERE id=?";
         $q = db_connect()->prepare($query);
-        return $q->execute(array($nom,$prenom, $email, $age, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id));
+        return $q->execute(array($nom,$prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id));
     }
     
     public static function delete_data($id)
