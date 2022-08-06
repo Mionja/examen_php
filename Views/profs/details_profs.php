@@ -1,11 +1,6 @@
-    <div class="container">
-        <h3 class="text-center" style="font-style:italic">Detail sur le professeur: <?= $profs['nom']?></h3>
-        <hr>
-    </div>
-
 <div class="container ">
     <div class="media border p-3 bg-secondary">
-        <img src="./assets/uploaded_img/<?= $profs['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;">
+        <img src="./assets/uploaded_img/<?= $profs['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;height:150px;" onclick="requestFullscreen(this)">
         <div class="media-body mt-3">
             <h2 class="u"><?= $profs['nom']?> <span><?= $profs['prenom']?></span></h2>
             <div class="row mt-5">
@@ -15,14 +10,14 @@
             </div>
         </div>
     </div>
-    <div class="container ">
-            <h4>Liste des modules du prof: </h4>
+    <div class="container mt-3">
+            <h4>Module(s) enseigné(s) par ce prof:  </h4>
             <p>
-            <ul>
+            <div>
                 <?php 
                   if ($modules != Null) {
                     foreach ($modules as $m) {
-                        echo '<li>'.$m['nom'].'</li>';
+                        echo '<span class="ml-5">'.$m['nom'].'</span>';
                     }
                   }  
                   else{
@@ -30,10 +25,23 @@
                   } 
                 ?>
                 
-            </ul>
+            </div>
             </p>
     </div>
-    
+    <?php if ($_SESSION["status"] == 'admin') {?> 
+    <div class="row mt-3">
+            <h5 class="col-4">Addresse: </h5>
+            <span class="col-2"><?= $profs['adresse']?></span>
+    </div>
+    <div class="row mt-3">
+            <h5 class="col-4"> Numéro téléphone: </h5>
+            <span class="col-2"><?= $profs['tel']?></span>
+    </div>
+    <div class="row mt-3">
+            <h5 class="col-4"> Réseaux sociaux: </h5>
+            <span class="col-2"><?= $profs['reseau']?></span>
+    </div>
+    <?php  } ?>
 </div>
 
 <div class="col text-center mt-3">

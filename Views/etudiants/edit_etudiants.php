@@ -17,7 +17,8 @@
     <label for="tel">Telephone :</label><input type="number" name="tel" id="tel" class="form-control" min=1 required value="<?= $etudiant['tel']?>"><br>
     <label for="cin">CIN :</label><input type="number" name="cin" id="cin" class="form-control" min=1 required value="<?= $etudiant['cin']?>"><br>
     <label for="comptefb" class="form-label">Nom sur fb :</label><input type="text" name="comptefb" id="comptefb" class="form-control" value="<?= $etudiant['comptefb']?>"><br>
-    <label for="photo" class="form-label">Photo :</label><input type="file" name="photo" id="photo" class="form-control" value="<?= $etudiant['photo']?>"><br>
+    <label for="photo" class="form-label">Photo :</label><img src="/PHP/assets/uploaded_img/<?=$etudiant['photo'] ?>" alt="photo_a_modifier" style="width: 100px;height:100px;">
+      <input type="file" name="photo" id="photo" class="form-control" value="<?= $etudiant['photo']?>"><br>
     <label for="password" class="form-label">Password :</label><input type="password" name="password" id="password" required class="form-control" value="<?= $etudiant['password']?>"><br>
     <div class="text-center">
         <div class="mb-3">

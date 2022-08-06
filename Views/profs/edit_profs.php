@@ -19,7 +19,7 @@
         <label for="reseau">Reseaux Sociaux :</label><input type="text" name="reseau" class="form-control" required value="<?=$profs['reseau'] ?>"><br>
         <label for="mdp">Mot de passe :</label><input type="password" name="mdp" id="mdp" value="<?=$profs['mdp'] ?>" class="form-control" required><br>
         <div class="container mt-5 mb-5">
-        <label for="photo">Entrer votre photo: 
+        <label for="photo">Photo: <img src="/PHP/assets/uploaded_img/<?=$profs['photo'] ?>" alt="photo_a_modifier" style="width: 100px;height:100px;">
             <input type="file" name="photo" id="photo" value="<?=$profs['photo'] ?>">
         </label>
         </div>

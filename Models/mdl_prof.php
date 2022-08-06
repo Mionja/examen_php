@@ -10,7 +10,7 @@ class Mdl_prof
 
     public static function save_data($nom,$prenom, $email, $tel, $adresse, $reseau, $photo, $genre, $mdp)
     {
-        $query = "INSERT INTO profs(nom, prenom, email, age, tel, adresse, reseau, photo, genre, mdp) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO profs(nom, prenom, email, tel, adresse, reseau, photo, genre, mdp) VALUES (?,?,?,?,?,?,?,?,?)";
         $q = db_connect()->prepare($query);
         return $q->execute(array($nom,$prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp));
     }
@@ -23,7 +23,7 @@ class Mdl_prof
 
     public static function set_data($nom, $prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id)
     {
-        $query = "UPDATE profs SET nom = ?, prenom=?, email= ?, age= ?, tel= ?, adresse= ?, reseau= ?,photo=?,genre=? ,mdp=? WHERE id=?";
+        $query = "UPDATE profs SET nom = ?, prenom=?, email= ?, tel= ?, adresse= ?, reseau= ?,photo=?,genre=? ,mdp=? WHERE id=?";
         $q = db_connect()->prepare($query);
         return $q->execute(array($nom,$prenom, $email, $tel, $adresse, $reseau, $photo,$genre,$mdp, $id));
     }

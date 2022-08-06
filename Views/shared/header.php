@@ -14,7 +14,16 @@
     <link rel="stylesheet" href="./assets/js/jquery.min.js">
     <link rel="stylesheet" href="./assets/js/popper.min.js">
     <title>Examen PHP</title>
-
+    <style>
+        img {
+            transition: .5s;
+            margin-left: 5%;
+            margin-top: 3%;
+        }
+        img:hover{
+            cursor:pointer;
+        }
+    </style>
 </head>
 
 <body>

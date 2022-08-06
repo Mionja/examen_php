@@ -1,13 +1,6 @@
-
-
-    <div class="container">
-        <h3 class="text-center" style="font-style:italic">Detail sur l'etudiant: <?= $etudiant['nom']?></h3>
-        <hr>
-    </div>
-
 <div class="container ">
     <div class="media border p-3 bg-secondary">
-        <img src="./assets/uploaded_img/<?= $etudiant['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;">
+        <img src="./assets/uploaded_img/<?= $etudiant['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;height:150px;" onclick="requestFullscreen(this)">
         <div class="media-body mt-3 ">
             <h2 class="ml-5"><?= $etudiant['nom']?> <span><?= $etudiant['prenom']?></span></h2>
             <div class="row mt-5">
