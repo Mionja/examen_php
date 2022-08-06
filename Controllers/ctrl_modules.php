@@ -39,7 +39,7 @@ class Ctrl_modules
                     extract($_POST);
 
                     Mdl_module::set_data($nom, $code, $heure, $id_prof,$id);
-                    header("location:/mine/PHP/index.php?page=Ctrl_modules");
+                    header("location:./PHP/index.php?page=Ctrl_modules");
 
                     
                 }

@@ -3,11 +3,6 @@
                 <h1 class="display-4">Bienvenue sur notre site</h1>
                 <p class="lead">Nous fournissons les informations dont vous cherchiez.</p>
             </div>
-            <?php 
-if (isset($_SESSION["status"])) {
-  echo $_SESSION["status"];  
-}
-?> 
           <div class="container">
             <div class="row text-center">
                 <div class="card col mx-2 bg-transparant <?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "etudiant") { echo 'd-none';}?>" style="width: 18rem;">
