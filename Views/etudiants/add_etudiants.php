@@ -8,13 +8,17 @@ if (isset($err)) {
 ?>
 <div class="container w-75">
   <form action="./index.php?page=Ctrl_etudiants&action=add" method="post" class="form" enctype="multipart/form-data">
-    <label class="form-label" for="genre">Votre genre</label>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="genre" value="homme" checked>Homme
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="genre" value="femme">Femme
-    </div>
+    
+        <div class="form-check mb-4 ml-5">
+            <label for="homme" class="mr-5">
+            <input class="form-check-input" id="homme" type="radio" name="genre" value="homme" checked>Homme
+            </label>
+        
+            <label for="femme" >
+            <input class="form-check-input" id="femme" type="radio" name="genre" value="femme">Femme
+            </label>
+        </div>
+
     <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
     <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control"><br>
     <label for="email">Email :</label><input type="email" name="email" id="email" class="form-control" required><br>

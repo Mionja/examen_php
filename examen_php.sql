@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 06 août 2022 à 22:20
+-- Généré le : dim. 07 août 2022 à 01:37
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -34,15 +34,14 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `email` varchar(100) NOT NULL,
   `fonction` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `nom`, `email`, `fonction`) VALUES
-(4, 'RANAIVOARISON Mionja', 'mionjaranaivoarison@gmail.com', 'dg'),
-(5, 'test', 'test@gmail.com', 'drh');
+(6, 'RANAIVOARISON MIONJA', 'mionjaranaivoarison@gmail.com', 'dg');
 
 -- --------------------------------------------------------
 
@@ -71,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `etudiants` (
 --
 
 INSERT INTO `etudiants` (`id`, `nom`, `prenom`, `date_naissance`, `cin`, `email`, `tel`, `comptefb`, `photo`, `genre`, `password`) VALUES
-(27, 'TEST NOM', 'prenom1', '2022-08-03', 2, 'test@gmail.com', 4, 'nom fb', '62eec9f0351563.18475007.jpg', 'homme', '123');
+(28, 'nom', 'prenom1', '2022-08-05', 342234, 'etudiant@gmail.com', 2342234, 'nom fb', 'defaultgirl.jpg', 'femme', '123');
 
 -- --------------------------------------------------------
 
@@ -85,14 +84,17 @@ CREATE TABLE IF NOT EXISTS `inscription` (
   `email` varchar(100) NOT NULL,
   `message` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `inscription`
 --
 
 INSERT INTO `inscription` (`id`, `email`, `message`) VALUES
-(1, 'test@mail.com', 'JE VEUX M\'INSCRIRE');
+(1, 'test@mail.com', 'JE VEUX M\'INSCRIRE'),
+(2, 'mionjaranaivoarison@gmail.com', 'Bonjour je voudrais avoir plus d\'information sur votre formation'),
+(3, 'coucou@gmail.com', 'Coucou, ampidiro ho mpianartra ah\r\n'),
+(4, 'test@gmail.com', 'test envoi demande d\'inscription');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `profs` (
 --
 
 INSERT INTO `profs` (`id`, `nom`, `prenom`, `email`, `age`, `tel`, `adresse`, `reseau`, `photo`, `genre`, `mdp`) VALUES
-(19, 'TET', 'prenom1', 'test@mail.com', 12, 1231, '1231', 'INSTAGRAM', '62eedab80066f5.40143159.jpg', 'homme', '123');
+(19, 'TET', 'prenom1', 'mionjaranaivoarison@gmail.com', 12, 1231, '1231', 'INSTAGRAM', '62ef16b8459915.57026469.png', 'homme', '123');
 
 --
 -- Contraintes pour les tables déchargées

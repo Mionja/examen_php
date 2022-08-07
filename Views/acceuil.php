@@ -2,6 +2,7 @@
 <div class="jumbotron text-center w-75 mx-auto">
                 <h1 class="display-4">Bienvenue sur notre site</h1>
                 <p class="lead">Nous fournissons les informations dont vous cherchiez.</p>
+                <a href="#notif">Voir les notifications</a>
             </div>
           <div class="container">
             <div class="row text-center">
@@ -41,3 +42,36 @@
                     </div>
                 </div>
             </div></div>
+
+            <div class="container mt-5">
+            <?php if ($_SESSION["status"] == 'admin') {?> 
+                <div class="jumbotron jumbotron-fluid">
+                <h1 class="ml-5" id="notif">Notifications:</h1>
+            <div class="container">
+                <h4>
+                    Liste des personnes voulant s'inscrire:
+                </h4>
+                    <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($i as $i) {?>
+                        <tr>
+                            <td><a href= "mailto:<?= $i['email']?>" target="_blank"  class="text-dark"><?= $i['email'] ?></a></td>
+                            <td><?= $i['message'] ?></td>
+                        </tr>
+                    <?php   }?>
+                    </tbody>
+                </table>
+            
+            <?php   }?>
+            </div>
+
+
+        </div>
+                
