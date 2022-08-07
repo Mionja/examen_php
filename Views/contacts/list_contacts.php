@@ -1,3 +1,4 @@
+<div class="bg-white p-5 border rounded box-shadow">
 <div class="row">
     <span class="h2">Liste des contacts</span>
     <?php if ($_SESSION["status"] == 'admin') {?>  
@@ -34,4 +35,5 @@
             <?php   }?>
         </tbody>
     </table>
+</div>
 </div>

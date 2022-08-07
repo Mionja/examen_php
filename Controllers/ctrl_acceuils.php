@@ -6,6 +6,7 @@
             $i = Mdl_contact::list_data_i();
             include("Views/acceuil.php");
         }
+
     }
 ?>
 

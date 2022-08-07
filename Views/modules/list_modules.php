@@ -1,3 +1,4 @@
+<div class="bg-white p-5 border rounded box-shadow">
 <div class="h2 text-center font-weight-light text-uppercase" style="font-style:italic">Liste  des modules</div>
 <hr>
 <table class="table table-striped">
@@ -34,5 +35,6 @@
 <?php if ($_SESSION["status"] == 'admin') {?> 
 <div class="text-center mb-3">
 <a href="./index.php?page=Ctrl_modules&view=add" class="btn btn-outline-info">Ajouter un module</a>
+</div>
 </div>
 <?php } ?>

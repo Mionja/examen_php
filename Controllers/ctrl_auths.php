@@ -8,7 +8,7 @@ include 'Models/mdl_auth.php' ;
         public static function index()
         {
 
-            if (isset($_POST['connect'])) {
+            if (isset($_POST['connect'])){
                 $mail = "admin@gmail.com";
                 $mdp = "123";
     
@@ -85,7 +85,6 @@ include 'Models/mdl_auth.php' ;
             }
             elseif ($_GET['auth'] == 'i') {
                 extract($_POST);
-
                 Mdl_auth::save_data($email, $message);
                 header('location:Views/auths/inscription_ok.php');
             }

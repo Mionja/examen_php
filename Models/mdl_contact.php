@@ -12,6 +12,11 @@ class Mdl_contact
         $query = "SELECT * FROM inscription ORDER BY id";
         return db_connect()->query($query)->fetchAll();
     }
+    public static function get_data_i($id)
+    {
+        $query = "SELECT * FROM inscription WHERE id=".$id;
+        return db_connect()->query($query)->fetchAll();
+    }
 
     public static function save_data($nom,$email, $fonction)
     {
@@ -36,6 +41,16 @@ class Mdl_contact
     public static function delete_data($id)
     {
         $query = "DELETE FROM contacts WHERE id =".$id;
+        db_connect()->query($query);
+    }
+    public static function delete_data_i($id)
+    {
+        $query = "DELETE FROM inscription WHERE id =".$id;
+        db_connect()->query($query);
+    }
+    public static function delete_data_iAll()
+    {
+        $query = "DELETE FROM inscription";
         db_connect()->query($query);
     }
 }

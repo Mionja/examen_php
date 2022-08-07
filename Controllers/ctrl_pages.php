@@ -30,6 +30,19 @@ class Ctrl_pages
             case 'Ctrl_acceuils':
                 self::thePage($page);
                 break;
+            case 'notifications':
+                include('views/contacts/notifications.php');
+                if (isset($_GET['action']) && ($_GET['action'] == 'delete')){
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        Mdl_contact::delete_data_i($id);
+                        header("location:./index.php?page=notifications");
+                    }
+                } elseif (isset($_GET['action']) && ($_GET['action'] == 'deleteAll')){
+                        Mdl_contact::delete_data_iAll();
+                        header("location:./index.php?page=notifications");
+                }
+                break;
             default:
                 header("location:views/auths/auth.php");
                 break;

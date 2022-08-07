@@ -1,6 +1,25 @@
+@import url('./assets/fonts/OleoScriptSwashCaps-Regular.ttf');
+@import url('./assets/fonts/RobotoSlab-VariableFont_wght.ttf');
 * {
     padding: 0;
     margin: 0;
+}
+
+
+/* img {
+    transition: .5s;
+    margin-left: 5%;
+    margin-top: 3%;
+} */
+
+img:hover {
+    cursor: pointer;
+}
+
+body {
+    background: linear-gradient(to bottom right, #FDC639, #FF7C60);
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 #container_home {
@@ -22,21 +41,6 @@ label {
     font-size: 17px;
 }
 
-#container_prof {
-    background-image: url('../img/student-849825.jpg');
-    height: 100vh;
-}
-
-#container_module {
-    background-image: url('../img/computer-workstation-415138.jpg');
-    height: 100vh;
-}
-
-#container_contact {
-    background-image: url('../img/man-2562325_1920.jpg');
-    height: 100vh;
-}
-
 .bg-image {
     background: fixed;
     background-repeat: no-repeat;
@@ -44,7 +48,8 @@ label {
 }
 
 .bg-transparant {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
+    /* border: 1px solid black; */
 }
 
 .hover:hover {

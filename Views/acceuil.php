@@ -1,14 +1,14 @@
 <div id="container_home" class="bg-image">
 <div class="jumbotron text-center w-75 mx-auto">
-                <h1 class="display-4">Bienvenue sur notre site</h1>
+                <h1 class="display-4" style="font-family: 'Oleo Script Swash Caps', 'cursive';">Bienvenue sur notre site</h1>
                 <p class="lead">Nous fournissons les informations dont vous cherchiez.</p>
                 <?php if ($_SESSION["status"] == 'admin') {?> 
-                <a href="#notif">Voir les notifications</a>
+                <a href="./index.php?page=notifications" class="text-danger">Voir les notifications (<?php echo count($i); ?>)</a>
                 <?php   }?>
             </div>
           <div class="container">
             <div class="row text-center">
-                <div class="card col mx-2 bg-transparant <?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "etudiant") { echo 'd-none';}?>" style="width: 18rem;">
+                <div class="mx-auto card col-lg-3 bg-transparant <?php if (isset($_SESSION["status"]) && $_SESSION["status"] == "etudiant") { echo 'd-none';}?>" style="width: 18rem;">
                     <img class="card-img-top mt-2" src="./assets/img/etude.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Nos profs</h5>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <div class="card col mx-2 bg-transparant" style="width: 18rem;">
+                <div class="mx-auto card col-lg-3 bg-transparant" style="width: 18rem;">
                     <img class="card-img-top mt-2" src="./assets/img/books-1204029_1920.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Nos modules</h5>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="card col mx-2 bg-transparant" style="width: 18rem;">
+                <div class="mx-auto card col-lg-3 bg-transparant" style="width: 18rem;">
                     <img class="card-img-top mt-2" src="./assets/img/contact-us-2993000_1920.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Nos contacts</h5>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="card col mx-2 bg-transparant" style="width: 18rem;">
+                <div class="mx-auto card col-lg-3 bg-transparant" style="width: 18rem;">
                     <img class="card-img-top mt-2" src="./assets/img/girl-new.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Nos étudiants</h5>
@@ -44,36 +44,6 @@
                     </div>
                 </div>
             </div></div>
-
-            <div class="container mt-5">
-            <?php if ($_SESSION["status"] == 'admin') {?> 
-                <div class="jumbotron jumbotron-fluid">
-                <h1 class="ml-5" id="notif">Notifications:</h1>
-            <div class="container">
-                <h4>
-                    Liste des personnes voulant s'inscrire:
-                </h4>
-                    <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Email</th>
-                            <th>Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                            foreach ($i as $i) {?>
-                        <tr>
-                            <td><a href= "mailto:<?= $i['email']?>" target="_blank"  class="text-dark"><?= $i['email'] ?></a></td>
-                            <td><?= $i['message'] ?></td>
-                        </tr>
-                    <?php   }?>
-                    </tbody>
-                </table>
-            
-            <?php   }?>
-            </div>
-
 
         </div>
                 
