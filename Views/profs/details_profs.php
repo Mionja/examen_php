@@ -5,7 +5,9 @@
             <h2 class="u"><?= $profs['nom']?> <span><?= $profs['prenom']?></span></h2>
             <div class="row mt-5">
                 <div class="col ml-5">
-                    <span class="ml-5"><a href= "mailto:<?= $profs['email']?>" target="_blank" title="Envoyer un email à <?= $profs['nom']?> " class="text-warning"><img src="./assets/img/send_email.png" alt=""> <?= $profs['email']?></a></span>
+                    <span class="ml-5">
+                        <a href= "mailto:<?= $profs['email']?>" target="_blank" title="Envoyer un email à <?= $profs['nom']?> " class="text-warning">
+                        <img src="./assets/img/send_email.png" alt="" class="pb-4"> <?= $profs['email']?></a></span>
                 </div>
             </div>
         </div>

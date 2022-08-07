@@ -2,7 +2,9 @@
 <div class="jumbotron text-center w-75 mx-auto">
                 <h1 class="display-4">Bienvenue sur notre site</h1>
                 <p class="lead">Nous fournissons les informations dont vous cherchiez.</p>
+                <?php if ($_SESSION["status"] == 'admin') {?> 
                 <a href="#notif">Voir les notifications</a>
+                <?php   }?>
             </div>
           <div class="container">
             <div class="row text-center">

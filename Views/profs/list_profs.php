@@ -19,9 +19,9 @@
         <?php  } ?>
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <strong class="text-gray-dark" style="font-size: 20px;">
-                    <?php if ($_SESSION["status"] == 'admin') {?> 
+                    
                     <a href="./index.php?page=Ctrl_profs&view=details&id=<?= $prof['id']?>" title="Details sur <?= $prof['nom']?>" class="mr-5 mt-3 text-dark" style="text-decoration: none;">
-                    <?php  } ?>
+                    
                         <?= $prof['nom']?> <?= $prof['prenom']?></a>
                     <?php if ($_SESSION["status"] == 'admin') {?> 
                     </strong>
@@ -38,7 +38,7 @@
 
 <?php } 
  else{
-    echo '<script>alert("Vous êtes un etudiant, vous n\'y avez pas accès")</script>'; ?>
+    echo '<script>alert("Les etudiants n\'ont pas accès à cette page")</script>'; ?>
 
     <img src="./assets/img/oups.png" alt="Oups, accès refusé" class="img-thumbnail mx-auto d-block w-25 bg-dark" >
     <p class="text-center mt-2 text-danger">Seul les administrateur et les professeurs ont accès à cette page</p>

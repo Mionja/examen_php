@@ -5,7 +5,10 @@
             <h2 class="ml-5"><?= $etudiant['nom']?> <span><?= $etudiant['prenom']?></span></h2>
             <div class="row mt-5">
                 <div class="col ml-5">
-                    <span class="ml-5"><a href= "mailto:<?= $etudiant['email']?>" target="_blank" title="Envoyer un email à <?= $etudiant['nom']?> " class="text-warning"><img src="./assets/img/send_email.png" alt=""> <?= $etudiant['email']?></a></span>
+                    <span class="ml-5">
+                    <a href= "mailto:<?= $etudiant['email']?>" target="_blank" title="Envoyer un email à <?= $etudiant['nom']?> " class="text-warning">
+                    <img src="./assets/img/send_email.png" alt="" class="pb-4"> <?= $etudiant['email']?></a>
+                    </span>
                 </div>
             </div>
         </div>
