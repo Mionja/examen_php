@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'Models/mdl_prof.php';
 include 'Models/mdl_etudiant.php';
 include 'Models/mdl_auth.php' ;
@@ -94,6 +93,10 @@ include 'Models/mdl_auth.php' ;
                 header("location:index.php");
             }
 
+        }
+        public static function logout(){
+            session_destroy();
+            header('location:Views/auths/auth.php');
         }
     }
 

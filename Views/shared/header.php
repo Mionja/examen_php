@@ -50,10 +50,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=Ctrl_contacts">Contacts</a>
                     </li>
+                    <li class="nav-item">
+                       <?php 
+                            var_dump($_SESSION);
+                        ?>
+                    </li>
                 </ul>
             </div>
             <div class="col">
-                <a href="./index.php" class="float-right btn btn-sm btn-danger">Deconnexion</a>
+                <a href="./index.php?action=logout" class="float-right btn btn-sm btn-danger">Deconnexion</a>
             </div>
         </nav>
     </header>
