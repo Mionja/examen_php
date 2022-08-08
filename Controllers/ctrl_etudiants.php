@@ -34,7 +34,8 @@ class Ctrl_etudiants
                     }
                     else
                     {
-                        Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$genre,$password);
+                        $photo = upload_pic('etudiant');
+                        Mdl_etudiant::save_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password);
                         header("location:./index.php?page=Ctrl_etudiants");
                     }
                 }
@@ -52,8 +53,8 @@ class Ctrl_etudiants
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-
-                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$genre,$password, $id);
+                    $photo = upload_pic('etudiant');
+                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,$photo,$genre,$password, $id);
                     header("location:./index.php?page=Ctrl_etudiants");
                 }
                 break;
