@@ -28,25 +28,31 @@ function upload_pic()
                 move_uploaded_file($tmpname, './assets/uploaded_img/'.$photo);
             } 
             else{
-                // echo "Votre photo a une mauvaise extension ou trop volumineux ou bien y a une erreur";
+                echo "Votre photo a une mauvaise extension ou trop volumineux ou bien y a une erreur";
      
-                if ( $_POST['genre'] == 'homme') {
-                    $photo = 'defaultboy.jpg';    
-                }
-                elseif ( $_POST['genre'] == 'femme') {
-                    $photo = 'defaultgirl.jpg';    
-                }
+                // if ( $_POST['genre'] == 'homme') {
+                //     $photo = 'defaultboy.jpg';    
+                // }
+                // elseif ( $_POST['genre'] == 'femme') {
+                //     $photo = 'defaultgirl.jpg';    
+                // }
     
             }    
         }
         else
         {
-            if ( $_POST['genre'] == 'homme') {
-                $photo = 'defaultboy.jpg';    
+            if (isset($_POST['update']))
+            {
+                $a = 0;
             }
-            elseif ( $_POST['genre'] == 'femme') {
-                $photo = 'defaultgirl.jpg';    
-            }
+            else{
+                if( $_POST['genre'] == 'homme') {
+                    $photo = 'defaultboy.jpg';    
+                }
+                elseif ( $_POST['genre'] == 'femme') {
+                    $photo = 'defaultgirl.jpg';    
+                }
+            } 
         }
         }
     
