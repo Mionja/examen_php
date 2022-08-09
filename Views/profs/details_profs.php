@@ -19,7 +19,7 @@
                 <?php 
                   if ($modules != Null) {
                     foreach ($modules as $m) {
-                        echo '<span class="ml-5">'.$m['nom'].'</span>';
+                        echo '<div class="ml-5 mt-2">'.$m['nom'].'</div>';
                     }
                   }  
                   else{
