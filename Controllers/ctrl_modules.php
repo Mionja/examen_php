@@ -4,7 +4,15 @@ class Ctrl_modules
 {
     public static function index()
     {
-        $view = isset($_GET['view']) ? $_GET['view'] : NULL;
+        if (isset($_GET['action'])){
+            self::action($_GET['action']);
+        }
+        else{
+            self::view(isset($_GET['view']) ? $_GET['view'] : NULL);
+        }
+    }
+
+    public static function view($view){
         switch ($view) {
             case 'add':
                 self::theView($view);
@@ -18,7 +26,9 @@ class Ctrl_modules
                 self::theView();
                 break;
         }
-        $action = isset($_GET['action']) ? $_GET['action'] : NULL;
+    }
+
+    public static function action($action){
         switch ($action) {
             case 'add':
                 if (isset($_POST['add'])) {
@@ -46,6 +56,7 @@ class Ctrl_modules
                 break;
         }
     }
+
     public static function theView($page = 'list')
     {
         if ($page != "list") {

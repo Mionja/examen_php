@@ -3,15 +3,15 @@
         <div class="bg-white p-3 rounded">
             <div class="row">
                 <div class="col-lg-4 mr-auto h3">Notifications</div>
-                <form class="d-flex mr-3" role="search">
+                <div class="d-flex mr-3">
                     <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <button class="btn btn-outline-primary">Search</button>
                 </form>
             </div>
         </div>
         <div class="bg-white p-3 rounded mt-2">
             <div class="row d-flex justify-content-center">
-                <a href="./index.php?page=notifications&action=deleteAll" class="btn btn-sm btn-outline-secondary w-75 mb-5">Tout marquer comme lu</a>
+                <a href="./index.php?page=notifications&action=deleteAll" class="btn btn-sm btn-outline-secondary w-75 mb-5">Tout marquer comme lu(supprimer)</a>
             </div>
             <?php $i = Mdl_contact::list_data_i();
                     foreach ($i as $i) { ?>

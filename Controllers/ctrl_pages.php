@@ -50,6 +50,6 @@ class Ctrl_pages
     }
     public static function thePage($page)
     {
-        $page::index() ;
+        $page::index();
     }
 }

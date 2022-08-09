@@ -4,7 +4,15 @@ class Ctrl_etudiants
 {
     public static function index()
     {
-        $view = isset($_GET['view']) ? $_GET['view'] : NULL;
+        if (isset($_GET['action'])){
+            self::action($_GET['action']);
+        }
+        else{
+            self::view(isset($_GET['view']) ? $_GET['view'] : NULL);
+        }
+        
+    }
+    public static function view($view){
         switch ($view) {
             case 'add':
                 self::theView($view);
@@ -20,7 +28,8 @@ class Ctrl_etudiants
                 self::theView();
                 break;
         }
-        $action = isset($_GET['action']) ? $_GET['action'] : NULL;
+    }
+    public static function action($action){
         switch ($action) {
             case 'add':
                 if (isset($_POST['add']) && isset($_FILES['photo'])) {
@@ -54,7 +63,7 @@ class Ctrl_etudiants
                     extract($_POST);
 
                     Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$genre,$password, $id);
-                    header("location:./index.php?page=Ctrl_etudiants");
+                    return header("Location:./index.php?page=Ctrl_etudiants");
                 }
                 break;
         }

@@ -5,7 +5,17 @@ class Ctrl_profs
 {
     public static function index()
     {
-        $view = isset($_GET['view']) ? $_GET['view'] : NULL;
+
+        if (isset($_GET['action'])){
+            self::action($_GET['action']);
+        }
+        else{
+            self::view(isset($_GET['view']) ? $_GET['view'] : NULL);
+        }
+        
+    }
+
+    public static function view($view){
         switch ($view) {
             case 'add':
                 self::theView($view);
@@ -22,6 +32,9 @@ class Ctrl_profs
                 self::theView();
                 break;
         }
+    }
+
+    public static function action($action){
         $action = isset($_GET['action']) ? $_GET['action'] : NULL;
         switch ($action) {
             case 'add':
@@ -56,6 +69,7 @@ class Ctrl_profs
                 break;
         }
     }
+
     public static function theView($page = 'list')
     {
         if ($page != "list") 
