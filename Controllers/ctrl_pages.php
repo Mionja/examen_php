@@ -14,35 +14,46 @@ class Ctrl_pages
     {
         $page = isset($_GET['page']) ? $_GET['page'] : NULL;
         extract($_POST);
+
         switch ($page) {
             case 'Ctrl_profs':
                 self::thePage($page);
                 break;
+
             case 'Ctrl_etudiants':
                 self::thePage($page);
                 break;
+
             case 'Ctrl_contacts':
                 self::thePage($page);
                 break;
+
             case 'Ctrl_modules':
                 self::thePage($page);
                 break;
+
             case 'Ctrl_acceuils':
                 self::thePage($page);
                 break;
+
             case 'notifications':
-                include('views/contacts/notifications.php');
-                if (isset($_GET['action']) && ($_GET['action'] == 'delete')){
-                    if (isset($_GET['id'])) {
-                        $id = $_GET['id'];
-                        Mdl_contact::delete_data_i($id);
-                        header("location:./index.php?page=notifications");
+                if (isset($_GET['action'])){
+                    if ($_GET['action'] == 'delete'){
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            Mdl_contact::delete_data_i($id);
+                            header("location:./index.php?page=notifications");
+                        }
                     }
-                } elseif (isset($_GET['action']) && ($_GET['action'] == 'deleteAll')){
+                    else if ($_GET['action'] == 'deleteAll'){
                         Mdl_contact::delete_data_iAll();
                         header("location:./index.php?page=notifications");
+                    }
+                } else {
+                    include('views/contacts/notifications.php');
                 }
                 break;
+                
             default:
                 header("location:views/auths/auth.php");
                 break;
