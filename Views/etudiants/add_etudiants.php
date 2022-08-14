@@ -19,7 +19,7 @@ if (isset($err)) {
             </label>
         </div>
 
-    <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
+    <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control" autocomplete="off"><br>
     <label for="prenom" class="form-label">Prenom :</label><input type="text" name="prenom" id="prenom" required class="form-control"><br>
     <label for="email">Email :</label><input type="email" name="email" id="email" class="form-control" required><br>
     <div class="row">

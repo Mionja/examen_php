@@ -24,3 +24,7 @@
 
         ?>
 
+<!-- Amelioration :
+Asina classe ny etudiant rehetra de arakaraka ny classe misy azy ny liste itany + emploi du temps 
+ -->
+
