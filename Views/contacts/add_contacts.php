@@ -1,7 +1,7 @@
 <div class="h2 text-center font-weight-light text-uppercase my-3">Nouveau contact</div>
 <hr>
 
-<div class="container w-50 border border-rounded pb-3 pt-3 bg-warning" style="background-color:aquamarine;">
+<div class="container w-50  pb-3 pt-3 bg-transparent" >
     <form action="./index.php?page=Ctrl_contacts&action=add" method="post" enctype="multipart/form-data" class="form">
         <label for="nom" class="form-label">Nom :</label><input type="text" name="nom" id="nom" required class="form-control"><br>
         <label for="email">Email :</label><input type="email" name="email" id="email" class="form-control" required><br>

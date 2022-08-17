@@ -1,13 +1,13 @@
-<div class="container ">
-    <div class="media border p-3 bg-secondary">
+<div class="container" style="border:1px solid white; border-radius:15px; width:50%;">
+    <div class="media">
         <img src="./assets/uploaded_img/<?= $etudiant['photo']?>" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;height:150px;" onclick="requestFullscreen(this)">
         <div class="media-body mt-3 ">
             <h2 class="ml-5"><?= $etudiant['nom']?> <span><?= $etudiant['prenom']?></span></h2>
             <div class="row mt-5">
                 <div class="col ml-5">
                     <span class="ml-5">
-                    <a href= "mailto:<?= $etudiant['email']?>" target="_blank" title="Envoyer un email à <?= $etudiant['nom']?> " class="text-warning">
-                    <img src="./assets/img/send_email.png" alt="" class="pb-4"> <?= $etudiant['email']?></a>
+                    <a href= "mailto:<?= $etudiant['email']?>" target="_blank" title="Envoyer un email à <?= $etudiant['nom']?> " class="text-danger">
+                    <img src="./assets/img/send_email.png" alt="" class="pb-0"> <?= $etudiant['email']?></a>
                     </span>
                 </div>
             </div>
