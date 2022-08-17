@@ -62,8 +62,7 @@ class Ctrl_etudiants
             case 'edit':
                 if (isset($_POST['update'])) {
                     extract($_POST);
-
-                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic(),$genre,$password, $id);
+                    Mdl_etudiant::set_data($nom,$prenom,$date_naissance,$cin,$email,$tel,$comptefb,upload_pic('etudiant'),$genre,$password, $id);
                     return header("Location:./index.php?page=Ctrl_etudiants");
 
                 }
